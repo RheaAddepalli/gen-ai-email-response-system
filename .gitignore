@@ -1,0 +1,62 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment Variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python Packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Hugging Face Cache (optional)
+.cache/
+huggingface/
+
+# Model Files (optional)
+models/
+checkpoints/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+
+# Temporary Files
+tmp/
+temp/
