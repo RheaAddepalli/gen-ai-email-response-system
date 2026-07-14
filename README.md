@@ -194,14 +194,17 @@ specified.
 
 ## Results (this run)
 
-20 examples, `llama-3.1-8b-instant`:
+19 of 20 examples scored (1 skipped due to a persistent malformed-JSON
+response from the smaller model — see limitations above), `llama-3.1-8b-instant`:
 
 ```json
 {
-  "avg_bertscore_f1": 0.9155,
-  "avg_faithfulness": 0.4996,
-  "avg_judge_normalized": 0.5654,
-  "avg_composite": 0.6299
+  "n": 19,
+  "n_failed": 1,
+  "avg_bertscore_f1": 0.9171,
+  "avg_faithfulness": 0.5591,
+  "avg_judge_normalized": 0.5728,
+  "avg_composite": 0.6541
 }
 ```
 
@@ -240,15 +243,6 @@ python run_pipeline.py --limit 5      # quick smoke test on 5 examples
 `all-MiniLM-L6-v2` (small, used for retrieval embeddings) from Hugging Face.
 Subsequent runs use the local cache and are much faster.
 
-```bash
-python run_pipeline.py                # full run: generate dataset -> generate replies -> evaluate
-python run_pipeline.py --skip-data    # reuse existing data/emails.json
-python run_pipeline.py --limit 5      # quick smoke test on 5 examples
-```
-
-**Note:** first run downloads `roberta-large` (~1.4GB, used by BERTScore) and
-`all-MiniLM-L6-v2` (small, used for retrieval embeddings) from Hugging Face.
-Subsequent runs use the local cache and are much faster.
 
 Outputs:
 - `data/emails.json` — the dataset
