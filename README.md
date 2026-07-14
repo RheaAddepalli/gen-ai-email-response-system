@@ -99,20 +99,41 @@ idea used in G-Eval and jury-of-judges evaluation setups.
 
 ### Validating the metric against real judgment
 
-I manually reviewed several scored responses to check the composite score's
-ranking matched my own reading of quality, rather than trusting the number
-blindly. A consistent pattern emerged: the generator's replies are
-well-toned and polite (tone scores 4.5–5/5 across the board) but
-systematically **less decisive** than the gold replies — they tend to ask a
-clarifying question ("could you confirm...") instead of committing to a
-resolution the way the human-written gold reply does. This was correctly
-penalized: correctness and completeness scores clustered around 2–3/5, and
-faithfulness scores were pulled down because claims like "we'll follow up" or
-"we're investigating" aren't grounded in anything the generator actually
-verified. This gave me confidence the scoring system is measuring something
-real, not just rewarding fluent text — it's catching a genuine, consistent
-weakness in the generator's behavior (hedging instead of resolving) that a
-pure similarity metric would have missed entirely.
+To confirm the composite score reflects real quality rather than an arbitrary
+number, I manually reviewed individual scored responses in `results/scores.json`
+against their actual content.
+
+**Example `billing_000`** (composite: 0.6206, faithfulness: 0.4): the customer
+asked why they were charged $10 more than their confirmed price. The gold
+reply attributes this to a shipping surcharge error. The generated reply
+instead claims the *product price itself* increased four days after purchase
+— a specific, confident claim that isn't supported by anything in the source
+email. The faithfulness check correctly flagged this exact claim as
+unsupported ("the price... did indeed increase to $129.99 on February 14th" →
+`supported: false`), and the judge independently scored correctness at only
+2/5 for the same reason ("misrepresents the reason for the price
+discrepancy"). Two independent signals converged on the same specific flaw —
+this is the kind of factual overreach a similarity-only metric would have
+missed entirely, since the reply is fluent and well-structured.
+
+**Example `billing_001`** (composite: 0.6525, faithfulness: 0.5): the reply
+correctly identifies the disputed charge as a "processing fee" (grounded,
+`supported: true`) but then makes several ungrounded procedural promises —
+"we will provide a detailed breakdown," "resolve the issue as soon as
+possible," "we will be in touch with an update" — none of which are backed by
+anything concrete in the source email or the reply itself. The faithfulness
+score (0.5) directly reflects this pattern: correct on the factual core,
+padded with unverifiable commitments. This matches a case-by-case reading of
+the reply as "polite but non-committal," which is exactly what the score
+communicates numerically.
+
+Across the reviewed examples, a consistent pattern held: generated replies
+are well-toned (tone scores 4-5/5 throughout) but tend to hedge — asking
+clarifying questions or making vague procedural promises instead of
+committing to the specific resolution a human agent gave in the gold reply.
+This was consistently and correctly penalized in both faithfulness and
+judge-correctness scores, giving confidence the combined metric is measuring
+a real, recurring weakness rather than producing noise.
 
 ### Model note (rate-limit trade-off)
 
