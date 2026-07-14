@@ -166,15 +166,18 @@ was doing *better*.
 
 ## How I used AI tools
 
-I used Claude (Anthropic) throughout development — to design the evaluation
-architecture (choosing and combining BERTScore, RAGAS-style faithfulness
-decomposition, and G-Eval-style judge scoring), to write and iterate on the
-pipeline code, and to debug issues live during the build (a Groq daily
-rate-limit exhaustion, and JSON parsing failures from a smaller model). The
-architectural decisions — which signals to combine, how to weight them, which
-model to use given rate-limit constraints, and what to cut given the time
-limit — were mine; Claude was used as a coding and design-sounding-board tool,
-not as an autonomous decision-maker.
+I used Claude (Anthropic) as a coding and implementation partner throughout
+development. I made the architectural decisions — which evaluation signals
+to combine (BERTScore, RAGAS-style faithfulness, G-Eval-style judge scoring),
+how to weight them, which retrieval approach to use (hybrid dense + BM25),
+which model to switch to under rate-limit constraints, and what to cut given
+the time limit. Claude was used to write and iterate on the pipeline code
+based on those decisions, help with environment setup (venv, `.env`
+configuration, dependency resolution), and debug issues that came up live
+during the build — a Groq daily rate-limit exhaustion, and JSON parsing
+failures from a smaller model's output. Claude did not make autonomous
+design decisions; it implemented and helped troubleshoot the system I
+specified.
 
 ## Results (this run)
 
