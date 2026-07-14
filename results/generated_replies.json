@@ -6,7 +6,7 @@
     "id": "billing_000",
     "category": "billing",
     "tone": "neutral",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the charge for your order #NV23456. We apologize for the discrepancy and are happy to investigate this further. After reviewing your order, we found that the price of the X500 Wireless Headphones did indeed increase to $129.99 on February 12th, two days after your purchase. However, since you were charged the higher price, we will honor the original price of $119.99 as stated on our website at the time of your purchase on February 10th and reflected in your email confirmation. We will process a refund of $10.00 to your PayPal account within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us. Thank you for your patience and understanding.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the charge for your order #NV23456. We apologize for the discrepancy and are happy to investigate this further. After reviewing your order, we found that the price of the X500 Wireless Headphones did indeed increase by $10 on February 12th, two days after your purchase. However, since you were charged the higher price, we will honor the original price of $119.99 as stated on our website at the time of your purchase on February 10th. We will process a refund of $10.00 to your PayPal account within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us.",
     "retrieved_context_ids": [
       "billing_003",
       "refund_request_009",
@@ -20,7 +20,7 @@
     "id": "billing_001",
     "category": "billing",
     "tone": "frustrated",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the discrepancy in the charge for your order #NV23456. We apologize for the confusion and the frustration this has caused. We are investigating the matter and will look into the additional charge of $50. Our initial records show that the order confirmation email did mention a 'processing fee', however, it's not clear what this fee was for and it was not included in the initial total. We will review this further and provide a detailed explanation of the charge. In the meantime, we will process a refund of the $50 to your original payment method. Please note that we are experiencing technical difficulties with our customer service phone number, and we recommend reaching out to us via email or our website's contact form for assistance. You should receive the refund within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your charge for Order #NV23456. We apologize for the confusion and any inconvenience this has caused. We are looking into this matter urgently and will investigate the 'processing fee' mentioned in your order confirmation email. We would like to request more information about your order to assist us in resolving this issue. Could you please provide your order details such as the item(s) purchased and the original payment method used? We will also make sure to look into the issue with our customer service number and get back to you as soon as possible. Once we have more information, we will be happy to assist you in resolving this issue to your satisfaction.",
     "retrieved_context_ids": [
       "complaint_017",
       "billing_002",
@@ -34,7 +34,7 @@
     "id": "billing_002",
     "category": "billing",
     "tone": "urgent",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding the charge on your order #NV12345. We apologize for the confusion caused by the unrecognized charge and the inconvenience it has caused. After reviewing your order, we have determined that the additional $45 charge was an error on our part. We strive to provide accurate and transparent transactions, but it appears that there was a discrepancy in our system. We would like to promptly correct the charge by refunding the incorrect amount of $45. You should see the refund in your account within the next 3-5 business days. We are also aware of the technical issue with our account login and are working to resolve it as soon as possible. In the meantime, please feel free to reach out to us via email for any further assistance. Your order #NV12345 has been updated, and we will provide a detailed breakdown of the transaction once the issue is resolved. Thank you for your patience and understanding.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding the charge on your order #NV12345. We apologize for the confusion caused by the incorrect charge and the inconvenience it has caused. After reviewing your order, we have determined that the additional $45 charge was an error on our part. We would like to provide a detailed breakdown of the transaction, but to do so, we need to verify your account information. Could you please reply to this email with your order details, including the payment method used, and we will promptly correct the charge and provide you with the necessary information? You should see the corrected charge in your account within the next 3-5 business days. We are also aware of the technical issue with our login system and are working to resolve it as soon as possible. In the meantime, please feel free to reach out to us via email for any further assistance. Thank you for your patience and understanding.",
     "retrieved_context_ids": [
       "refund_request_011",
       "billing_001",
@@ -48,7 +48,7 @@
     "id": "billing_003",
     "category": "billing",
     "tone": "polite",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the discrepancy in the charge for your order #ORD12345. We apologize for the confusion. After investigating, we found that there was an error in our system that added a $30 shipping surcharge to your order, which was not reflected in your initial order confirmation. The correct total for your order, including the shipping surcharge, is indeed $129.99. However, since this was not clearly communicated to you, we would like to refund the $30 shipping surcharge back to your credit card as a one-time courtesy. You should receive the refund within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the discrepancy in the charge for your order #ORD12345. We apologize for the confusion. After investigating, we found that there was a price increase on the X500 wireless headphones that occurred after your purchase on February 10th. The correct total for your order is indeed $129.99, which reflects the updated price at the time of your purchase. If you would like, we can provide a refund for the price difference of $30, or we can issue a store credit for the same amount. Please let us know your preferred resolution, and we will be happy to assist you further.",
     "retrieved_context_ids": [
       "billing_000",
       "sales_inquiry_014",
@@ -62,7 +62,7 @@
     "id": "technical_support_004",
     "category": "technical_support",
     "tone": "neutral",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 printer driver. I apologize for the inconvenience caused by the missing 'Double Sided Printing' feature. I've checked on the status of your order #NV12345 and confirmed that it was shipped on February 12th. I'm going to go ahead and process a replacement driver for you, which will be shipped out via email as a digital download within the next 24 hours. You will receive an email with the new driver installation instructions once it's available. If you would prefer a refund instead, please let me know and I'll be happy to assist you with that. Please note that you will not need to return the defective driver, as we will send the new one via email. If you have any further questions or concerns, please don't hesitate to contact me directly.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 printer driver and the missing 'Double Sided Printing' feature. I apologize for the inconvenience this has caused. I've checked on the status of your order #NV12345 and confirmed that it was processed on February 10th. I'm going to go ahead and process an updated driver for you, which will be sent to you via email as soon as it's available. In the meantime, I'd like to request more information about your printer and operating system to ensure that the updated driver is compatible with your setup. Could you please provide me with the following details: your printer's serial number, your operating system version, and any other relevant information about your printer configuration? Once I have this information, I'll be able to assist you further and provide a solution to this issue.",
     "retrieved_context_ids": [
       "complaint_018",
       "complaint_016",
@@ -76,7 +76,7 @@
     "id": "technical_support_005",
     "category": "technical_support",
     "tone": "frustrated",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV456789. We apologize for the inconvenience you've experienced with the payment processing. I've checked on the status of your order, and it appears that there was an issue with the expiration date of your Visa card being recognized correctly. I've gone ahead and manually reviewed your order, and I'm happy to inform you that the issue has been resolved. Your order for the Bose QuietComfort 35 II headphones was indeed processed on January 10th, and the total amount of $349.95 was charged to your Visa card. If you have any further questions or concerns, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV456789. We apologize for the inconvenience you've experienced with the payment processing. I've checked on the status of your order, and it appears that there was an issue with the expiration date of your Visa card. I've gone ahead and manually reviewed the order, and I'm happy to inform you that the issue has been resolved. Your order for the Bose QuietComfort 35 II headphones for $349.95 has been successfully processed, and you should receive an email with the order confirmation details shortly. If you have any further questions or concerns, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
     "retrieved_context_ids": [
       "technical_support_006",
       "billing_001",
@@ -90,7 +90,7 @@
     "id": "technical_support_006",
     "category": "technical_support",
     "tone": "urgent",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #INV12345 for the EchoFrame Speaker. I apologize for the inconvenience you've experienced with trying to track your order and the error message 'Tracking information not available for this order'. I've checked on the status of your order and it appears that there was an issue with the shipping process. I've requested an update from the shipping carrier and I will provide you with a revised estimated delivery date as soon as possible. In the meantime, I have also requested that a replacement order be shipped to you via expedited shipping, at no additional cost to you. You will receive an email with the new tracking information as soon as the replacement order is shipped. Please allow 24-48 hours for the new tracking information to be updated. If you have any further questions or concerns, please do not hesitate to contact us. Your original order total of $249.99 will still be honored and you will not be charged for the replacement order. Thank you for your patience and understanding.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #INV12345 for the EchoFrame Speaker. I apologize for the inconvenience you've experienced with the error message 'Tracking information not available for this order' and the delay in receiving your order. I've checked on the status of your order and it appears that there was an issue with the shipping process. I've escalated this issue to our shipping team and they will be in touch with you within the next 24 hours to provide an update on the status of your order. In the meantime, I've also gone ahead and processed a replacement order for you, which will be shipped out via expedited shipping to ensure it arrives as soon as possible. You will receive a new tracking number via email once the replacement order has shipped. Please let me know if there's anything else I can assist you with. Your replacement order is being processed and you will receive the new tracking information as soon as it's available. Thank you for your patience and understanding.",
     "retrieved_context_ids": [
       "complaint_018",
       "refund_request_009",
@@ -104,7 +104,7 @@
     "id": "technical_support_007",
     "category": "technical_support",
     "tone": "polite",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV23456. We apologize for the inconvenience you've experienced with the X5 Smart Speaker. I've checked on the status of your order, and it appears that the error message 'Failed to connect: APNotFound' is a common issue that can be resolved with a simple software update. I've gone ahead and manually updated the speaker's software, and you should receive a confirmation email with the updated order status shortly. Your X5 Smart Speaker will be fully functional and connectable to your Wi-Fi network after the software update is complete. If you have any further questions or concerns, please don't hesitate to contact us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X5 Smart Speaker, order number #NV23456. We apologize for the inconvenience you've experienced with connecting the speaker to your Wi-Fi network. I've checked on the status of your order, and it appears that the issue is not related to any technical issues on our end. However, I would like to provide you with some additional troubleshooting steps to help resolve the issue. Please try resetting the speaker to its factory settings and then attempt to connect it to your Wi-Fi network again. If the issue persists, please contact our support team, and we will be happy to assist you further. Your order total of $129.99 will be processed as normal, and you will receive a confirmation email with the updated order status shortly. If you have any further questions or concerns, please don't hesitate to contact us.",
     "retrieved_context_ids": [
       "technical_support_005",
       "complaint_017",
@@ -118,7 +118,7 @@
     "id": "refund_request_008",
     "category": "refund_request",
     "tone": "neutral",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. Sorry to hear that the 'EcoSmart 5000' water filter system arrived damaged. We'd be happy to assist you with a refund. As per our return policy, we can offer a full refund of $249.99. To proceed, please confirm the damage by replying to this email with photos or a detailed description of the issue. Once we receive this information, we will provide you with a return merchandise authorization (RMA) number and further instructions. If you have any questions or concerns, please don't hesitate to contact us. Your order #NZ12345 will be updated accordingly, and we appreciate your patience and cooperation in this matter.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the inconvenience caused by the damaged 'EcoSmart 5000' water filter system. I've located your order and see that it was indeed shipped to you on February 10th. We'd be happy to assist you with a refund. As per our return policy, we can offer a full refund of $249.99. Please provide us with a photo of the damaged item and your return address so we can process the refund accordingly. If you have any questions or concerns, please don't hesitate to contact us.",
     "retrieved_context_ids": [
       "refund_request_010",
       "refund_request_011",
@@ -132,7 +132,7 @@
     "id": "refund_request_009",
     "category": "refund_request",
     "tone": "frustrated",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #NX456789. I apologize for the delay in receiving your 'X500 Pro Wireless Headphones' and the inconvenience caused by the 'Tracking information not available for this order' error message. I've checked on the status of your order and it appears that there was an issue with the shipping label. I've escalated this issue to our shipping team and they will be in touch with you within the next 24 hours to provide an update on the status of your order. In the meantime, I've also gone ahead and processed a full refund of $129.99, which will be processed within the next 24-48 hours. You will receive an email notification once the refund is completed. If you have any further questions or concerns, please don't hesitate to contact us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #NX456789. I apologize for the delay in receiving your 'X500 Pro Wireless Headphones' and the inconvenience caused by the 'Tracking information not available for this order' error message. I've located your order and see that it was indeed supposed to be delivered within the estimated timeframe. I'm happy to inform you that I've initiated a full refund of $129.99, which will be processed within the next 24-48 hours. You will receive an email notification once the refund is completed. If you have any further questions or concerns, please don't hesitate to contact us.",
     "retrieved_context_ids": [
       "refund_request_010",
       "complaint_018",
@@ -146,7 +146,7 @@
     "id": "refund_request_010",
     "category": "refund_request",
     "tone": "urgent",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the delay and the inconvenience you have experienced. I have checked on the status of your order and it appears that there was an issue with the shipping carrier, which caused the delay. I have requested an update from the carrier and I will provide you with a revised estimated delivery date as soon as possible. In the meantime, I have also requested that a replacement order be shipped to you via expedited shipping, at no additional cost to you. You will receive an email with the new tracking information as soon as the replacement order is shipped. Please allow 24-48 hours for the new tracking information to be updated. If you have any further questions or concerns, please do not hesitate to contact us. Your original order total of $249.99 will still be honored and you will not be charged for the replacement order. Thank you for your patience and understanding.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the delay and the inconvenience you have experienced. I have checked on the status of your order and it appears that there was an issue with the shipping process, which caused the delay. I have requested an update from the shipping carrier and I will provide you with a revised estimated delivery date as soon as possible. In the meantime, I have also initiated a refund of $249.99 for you, which will be processed within the next 3-5 business days. You will receive an email confirmation once the refund has been issued. If you have any further questions or concerns, please do not hesitate to contact us. Thank you for your patience and understanding.",
     "retrieved_context_ids": [
       "refund_request_009",
       "complaint_019",
@@ -160,7 +160,7 @@
     "id": "refund_request_011",
     "category": "refund_request",
     "tone": "polite",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 Smartwatch, order #NV12345. We apologize for the inconvenience caused by the malfunctioning device. We are happy to assist you with a full refund of $249.99. However, before we proceed, could you please provide us with more information about your order, such as the serial number of your device and the exact error message you're receiving when trying to sync it with your phone? This will help us troubleshoot the issue and resolve it more efficiently. Please allow 3-5 business days for the refund to be processed. You will receive an email confirmation once the refund has been issued. If you have any further questions or concerns, please do not hesitate to contact us. Thank you for your patience and understanding.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 Smartwatch, order #NV12345. We apologize for the inconvenience caused by the malfunctioning device. We are happy to assist you with a full refund of $249.99. However, before we proceed, could you please provide more information about the device's warranty status and the date you purchased it, as this will help us to process your request more efficiently? Additionally, if you're open to it, we may be able to offer a replacement device instead of a full refund. Please let me know which option you prefer and if you have any further questions or concerns, please do not hesitate to contact us.",
     "retrieved_context_ids": [
       "billing_002",
       "refund_request_009",
@@ -174,7 +174,7 @@
     "id": "sales_inquiry_012",
     "category": "sales_inquiry",
     "tone": "neutral",
-    "generated_reply": "Dear valued customer, thank you for bringing this to our attention. I've reviewed your order #INV12345 and the X500 Premium subscription. The promotional discount of $20 off for first-time customers is indeed available, and since you placed your order on February 10th, you qualify for it. I will go ahead and apply the discount to your order, which will bring the total down to $229.99. You should receive an updated order confirmation email with the corrected pricing. If you have any further questions or concerns, please do not hesitate to reach out to us.",
+    "generated_reply": "Dear valued customer, thank you for bringing this to our attention. I've reviewed your order #INV12345 and the X500 Premium subscription. The promotional discount of $20 off for first-time customers is a one-time offer that is automatically applied at checkout. However, it seems that the discount was not applied to your order. I've gone ahead and manually applied the discount to your order, which brings the total to $229.99. You should receive an updated order confirmation email with the corrected pricing. If you have any further questions or concerns, please do not hesitate to reach out to us.",
     "retrieved_context_ids": [
       "sales_inquiry_013",
       "sales_inquiry_015",
@@ -188,7 +188,7 @@
     "id": "sales_inquiry_013",
     "category": "sales_inquiry",
     "tone": "frustrated",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your order #NX001234. I've reviewed your order and found that the pricing discrepancy is due to an issue with the coupon code 'X500PRO15'. I've checked our system, and it appears that this coupon code is not valid for the X500 Pro software package. However, I'd be happy to provide you with an adjustment to your order. The correct total for your order should be $249.99. I've manually updated your order to reflect the correct pricing. You should see the corrected total by logging into your account on our website. If you have any further questions or concerns, please don't hesitate to contact us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your order #NX001234. I have reviewed your order and the pricing discrepancy you mentioned. The X500 Pro software package was indeed priced at $299.99, which is higher than the standard price of $249.99. However, I found that the $299.99 price is due to an additional feature that was included in your custom order, which is not included in the standard package listed on our website. The additional feature, 'Advanced Analytics,' is a $50 add-on. \n\nRegarding the coupon code 'X500PRO15', I apologize for the inconvenience caused by the error message. Unfortunately, this coupon code is not applicable to the X500 Pro software package due to its custom nature. \n\nI would like to assist you in resolving this matter. If you'd like to proceed with the standard package at $249.99, I can update your order and provide a revised order confirmation. Alternatively, if you'd like to keep the additional feature, I can provide you with more information on how to proceed. Please let me know how you'd like to proceed, and I'll be happy to assist you.",
     "retrieved_context_ids": [
       "sales_inquiry_012",
       "sales_inquiry_014",
@@ -202,7 +202,7 @@
     "id": "sales_inquiry_014",
     "category": "sales_inquiry",
     "tone": "urgent",
-    "generated_reply": "Dear valued customer, thank you for bringing this to our attention. I have reviewed your quote for the X500 Pro software package under order number #INV2023-0012 and I see that there is a pricing discrepancy. The correct price for the X500 Pro software package is indeed $2,199.99, as listed on our website. I have gone ahead and adjusted the price for your quote to reflect the correct amount. You should receive an updated quote reflecting the corrected pricing. If you have any further questions or concerns, please do not hesitate to reach out to us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding the pricing discrepancy for the X500 Pro software package. I have checked on the status of your quote #INV2023-0012 and confirmed that the price listed on our website is indeed $2,199.99. The quote you received for $2,499.99 appears to be an error. I have gone ahead and adjusted the price for your quote to reflect the correct amount. You should receive an updated quote with the corrected pricing shortly. Please allow 24-48 hours for the updated quote to be processed. If you have any further questions or concerns, please do not hesitate to contact us.",
     "retrieved_context_ids": [
       "sales_inquiry_013",
       "sales_inquiry_012",
@@ -216,7 +216,7 @@
     "id": "sales_inquiry_015",
     "category": "sales_inquiry",
     "tone": "polite",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your quote for the X500 Pro model under order number #XS001234. I've reviewed your quote and confirmed that it includes the base model at $2,515 and the premium support package at $800. As for the extended warranty, the cost is $495. If you're interested in purchasing all three together, I can provide you with a combined quote. Please let me know if you'd like me to proceed with this, and I'll be happy to assist you with the details.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your quote for the X500 Pro model under order number #XS001234. I've reviewed your quote and can provide you with the pricing details for the extended warranty. The extended warranty for the X500 Pro model is priced at $200. If you're interested in purchasing the extended warranty, premium support package, and base model together, I can provide you with a revised quote. Please let me know if you'd like me to proceed with this and I'll be happy to assist you.",
     "retrieved_context_ids": [
       "sales_inquiry_014",
       "sales_inquiry_012",
@@ -230,7 +230,7 @@
     "id": "complaint_016",
     "category": "complaint",
     "tone": "neutral",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartBlender 500, order number #12345. We apologize for the inconvenience caused by the 'E03: Motor Overload' error message. We'd be happy to help you with a replacement or a refund. As per our return policy, we can offer a replacement SmartBlender 500, which will be shipped to you free of charge. Alternatively, if you would prefer a refund, we will process it immediately. To proceed, please reply to this email with your preference, and we will provide you with a return merchandise authorization (RMA) number and further instructions. If you have any questions or concerns, please don't hesitate to contact us. Your order #12345 will be updated accordingly, and we appreciate your patience and cooperation in this matter.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartBlender 500, order number #12345. We apologize for the inconvenience caused by the 'E03: Motor Overload' error message. We'd be happy to help you with a replacement or a refund. As per our return policy, we can offer a replacement device or a full refund of $149.99. To proceed, please reply to this email with your preference, and we will provide you with a return merchandise authorization (RMA) number and further instructions. If you have any questions or concerns, please don't hesitate to contact us. Your order #12345 will be updated accordingly, and we appreciate your patience and cooperation in this matter.",
     "retrieved_context_ids": [
       "billing_001",
       "refund_request_011",
@@ -244,7 +244,7 @@
     "id": "complaint_017",
     "category": "complaint",
     "tone": "frustrated",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartCam 9000, order #12345. Sorry to hear that the camera was defective and did not connect to your Wi-Fi network. I apologize for the inconvenience caused by the delayed delivery and the defective product. I've checked on the status of your order and confirmed that it was shipped on February 17th, 2023. I'm going to go ahead and process a replacement for you, which will be shipped out within the next 3-5 business days. You will receive an email with the new tracking information once the replacement has been shipped. Please note that you will not need to return the defective camera, as we will send a prepaid return label with the replacement. If you would prefer a refund instead, please let me know and I'll be happy to assist you with that.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartCam 9000, order #12345. I apologize for the inconvenience caused by the delayed delivery and the defective camera. I've checked on the status of your order and confirmed that it was shipped on February 15th, 2023. I'm going to go ahead and process a replacement for you, which will be shipped out within the next 3-5 business days. You will receive an email with the new tracking information once the replacement has been shipped. If you would prefer a refund instead, please let me know and I'll be happy to assist you with that. Please note that you will not need to return the defective camera, as we will send a prepaid return label with the replacement. If you have any further questions or concerns, please don't hesitate to contact me directly.",
     "retrieved_context_ids": [
       "billing_001",
       "complaint_016",
@@ -258,7 +258,7 @@
     "id": "complaint_018",
     "category": "complaint",
     "tone": "urgent",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV12345. I apologize for the inconvenience you've experienced with tracking your Xbox Series X Console. I've checked on the status of your order and it appears that there was an issue with the shipping details not being updated correctly. I've gone ahead and manually updated the tracking information, and you should receive an email with the updated tracking details shortly. Your order was indeed processed on February 10th, and the total amount of $599.99 was charged to your payment method. I understand the urgency of your situation, and I'm working to resolve this as quickly as possible. Please allow 24-48 hours for the new tracking information to be updated, and I'll provide you with a revised estimated delivery date as soon as possible. If you have any further questions or concerns, please don't hesitate to contact us.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV12345. I apologize for the inconvenience you've experienced with tracking your Xbox Series X Console. I've checked on the status of your order and it appears that there was an issue with the shipping details not being updated correctly. I've gone ahead and manually updated the tracking information, and you should receive an email with the updated tracking details shortly. Your order was indeed processed on February 10th, and the total amount of $599.99 was charged to your original payment method. Given the urgency of your situation, I've expedited the shipping process, and I will provide you with an update on the status of your order as soon as possible. If you have any further questions or concerns, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
     "retrieved_context_ids": [
       "technical_support_006",
       "refund_request_009",
@@ -272,7 +272,7 @@
     "id": "complaint_019",
     "category": "complaint",
     "tone": "polite",
-    "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #ORD12345. I apologize for the delay in receiving your 'EcoPure Water Filter' and the inconvenience caused by the 'Tracking information not available' error message. I've checked on the status of your order and it appears that it was indeed supposed to be delivered within 3-5 business days. I'm happy to inform you that I've located your order and I'm going to go ahead and process a full refund of $129.99 for you, which you should receive within 5-7 business days. If you have any further questions or concerns, please don't hesitate to reach out to us. Your refund will be credited back to the original payment method. Please let me know if there's anything else I can assist you with.",
+    "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #ORD12345. I apologize for the delay in receiving your 'EcoPure Water Filter' and the inconvenience caused by the 'Tracking information not available' error message. I've checked on the status of your order and it appears that it was indeed supposed to be delivered within 3-5 business days. I'm happy to inform you that I've initiated a search for your order and will provide you with an update on its status as soon as possible. If you have any further questions or concerns, please don't hesitate to contact us.",
     "retrieved_context_ids": [
       "refund_request_010",
       "complaint_018",

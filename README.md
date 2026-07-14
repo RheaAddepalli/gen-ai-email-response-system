@@ -163,6 +163,19 @@ was doing *better*.
   judge to reduce self-preference bias.
 - Retrieval pool is the dataset itself; at production scale this would be a
   separate, larger historical reply corpus.
+- **JSON parsing reliability with smaller models:** `llama-3.1-8b-instant`
+  occasionally produces malformed JSON on longer, more complex structured
+  outputs (e.g. duplicate claims with inconsistent values, missing delimiters)
+  — a known limitation of smaller models on strict structured generation.
+  Since the reply generator is stochastic (`temperature=0.5`), different runs
+  produce different reply lengths and complexity, making these failures
+  non-reproducible. Rather than retry indefinitely (retries at `temperature=0`
+  don't help once already-deterministic output is malformed), the evaluation
+  pipeline treats a persistent JSON failure as a skippable per-example error:
+  it logs the failure, excludes that example from aggregate scoring, and
+  continues — reported transparently via `n_failed` in `scores.json`. A
+  production system would likely use structured output / JSON mode
+  (where supported) or a more reliable model for this step.
 
 ## How I used AI tools
 

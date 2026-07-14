@@ -150,13 +150,22 @@ def evaluate_response(subject: str, body: str, gold_reply: str, generated_reply:
 def evaluate_all(results_path: Path, output_path: Path):
     records = json.loads(results_path.read_text())
     scored = []
+    failed = []
     for r in records:
         print(f"  evaluating {r['id']}...")
-        eval_result = evaluate_response(r["subject"], r["body"], r["gold_reply"], r["generated_reply"])
-        scored.append({**r, "eval": eval_result})
+        try:
+            eval_result = evaluate_response(r["subject"], r["body"], r["gold_reply"], r["generated_reply"])
+            scored.append({**r, "eval": eval_result})
+        except Exception as e:
+            print(f"  [SKIPPED {r['id']}] evaluation failed: {e}")
+            failed.append({"id": r["id"], "error": str(e)})
+
+    if not scored:
+        raise RuntimeError("All evaluations failed -- nothing to report.")
 
     aggregate = {
         "n": len(scored),
+        "n_failed": len(failed),
         "avg_bertscore_f1": round(mean(s["eval"]["bertscore_f1"] for s in scored), 4),
         "avg_faithfulness": round(mean(s["eval"]["faithfulness_score"] for s in scored), 4),
         "avg_judge_normalized": round(mean(s["eval"]["judge_scores"]["judge_normalized_0_1"] for s in scored), 4),
@@ -164,9 +173,11 @@ def evaluate_all(results_path: Path, output_path: Path):
         "weights": WEIGHTS,
     }
 
-    output = {"aggregate": aggregate, "per_response": scored}
+    output = {"aggregate": aggregate, "per_response": scored, "failed": failed}
     output_path.write_text(json.dumps(output, indent=2))
     print(f"\nAggregate: {json.dumps(aggregate, indent=2)}")
+    if failed:
+        print(f"Note: {len(failed)} example(s) skipped due to evaluation errors: {[f['id'] for f in failed]}")
     print(f"Wrote full results to {output_path}")
     return output
 

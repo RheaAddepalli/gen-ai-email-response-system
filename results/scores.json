@@ -1,10 +1,11 @@
 {
   "aggregate": {
-    "n": 20,
-    "avg_bertscore_f1": 0.9155,
-    "avg_faithfulness": 0.4996,
-    "avg_judge_normalized": 0.5654,
-    "avg_composite": 0.6299,
+    "n": 19,
+    "n_failed": 1,
+    "avg_bertscore_f1": 0.9171,
+    "avg_faithfulness": 0.5591,
+    "avg_judge_normalized": 0.5728,
+    "avg_composite": 0.6541,
     "weights": {
       "bertscore": 0.25,
       "faithfulness": 0.35,
@@ -19,30 +20,38 @@
       "id": "billing_000",
       "category": "billing",
       "tone": "neutral",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the charge for your order #NV23456. We apologize for the discrepancy and are happy to investigate this further. After reviewing your order, we found that the price of the X500 Wireless Headphones did indeed increase to $129.99 on February 14th, four days after your purchase. However, since you were charged the higher price, we will honor the original price of $119.99 as stated on our website at the time of your purchase on February 10th and reflected in your email confirmation. We will process a refund of $10.00 to your PayPal account within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us. Thank you for your patience and understanding.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the charge for your order #NV23456. We apologize for the discrepancy and are happy to investigate this further. After reviewing your order, we found that the price of the X500 Wireless Headphones did indeed increase by $10 on February 12th, two days after your purchase. However, since you were charged the higher price, we will honor the original price of $119.99 as stated on our website at the time of your purchase on February 10th. We will process a refund of $10.00 to your PayPal account within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us.",
       "retrieved_context_ids": [
         "billing_003",
         "refund_request_009",
         "billing_002"
       ],
       "eval": {
-        "bertscore_f1": 0.9223,
-        "faithfulness_score": 0.4,
+        "bertscore_f1": 0.9252,
+        "faithfulness_score": 0.8571428571428571,
         "faithfulness_claims": [
           {
-            "claim": "the price of the X500 Wireless Headphones did indeed increase to $129.99 on February 14th",
+            "claim": "the price of the X500 Wireless Headphones did indeed increase by $10 on February 12th",
             "supported": false
           },
           {
-            "claim": "four days after your purchase",
+            "claim": "the price of the X500 Wireless Headphones increased by $10",
             "supported": true
           },
           {
-            "claim": "we will honor the original price of $119.99 as stated on our website at the time of your purchase on February 10th",
+            "claim": "the original price of the X500 Wireless Headphones was $119.99",
             "supported": true
           },
           {
-            "claim": "we will honor the original price of $119.99 as reflected in your email confirmation",
+            "claim": "the original price of the X500 Wireless Headphones was stated on our website at the time of your purchase on February 10th",
+            "supported": true
+          },
+          {
+            "claim": "the customer was charged the higher price",
+            "supported": true
+          },
+          {
+            "claim": "we will honor the original price of $119.99",
             "supported": true
           },
           {
@@ -50,39 +59,43 @@
             "supported": true
           },
           {
-            "claim": "If you have any further questions or concerns, please don't hesitate to contact us",
-            "supported": false
+            "claim": "the order was placed on February 10th",
+            "supported": true
           },
           {
-            "claim": "thank you for your patience and understanding",
-            "supported": false
+            "claim": "the order was placed on February 12th",
+            "unsupported": true
+          },
+          {
+            "claim": "the order was placed on February 10th and the customer received an email confirmation with the total of $119.99",
+            "supported": true
           }
         ],
         "judge_scores": {
-          "relevance": 4,
+          "relevance": 3,
           "correctness": 2,
-          "tone": 4,
+          "tone": 4.5,
           "completeness": 4,
-          "judge_mean_1_5": 3.5,
-          "judge_normalized_0_1": 0.625
+          "judge_mean_1_5": 3.38,
+          "judge_normalized_0_1": 0.595
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply attempts to address the customer's concern but provides a different explanation for the price discrepancy, which is not supported by the provided order details. The reference reply provides a clear and accurate explanation for the discrepancy, which is an error in the system.",
-            "relevance": 4,
+            "reasoning": "The candidate reply attempts to address the customer's concern but incorrectly attributes the price increase to a change in the product price rather than a shipping surcharge. It also fails to acknowledge the system error and the courtesy refund.",
+            "relevance": 2,
             "correctness": 2,
             "tone": 4,
             "completeness": 4
           },
           {
-            "reasoning": "The candidate reply attempts to address the customer's concern, but it misrepresents the reason for the price discrepancy and does not provide a clear explanation for the refund.",
+            "reasoning": "The candidate reply attempts to address the customer's concern but misattributes the price increase to a change in the product price rather than a shipping surcharge. It also fails to acknowledge the error in the system and the courtesy refund.",
             "relevance": 4,
             "correctness": 2,
-            "tone": 4,
+            "tone": 5,
             "completeness": 4
           }
         ],
-        "composite_score": 0.6206
+        "composite_score": 0.7693
       }
     },
     {
@@ -92,78 +105,70 @@
       "id": "billing_001",
       "category": "billing",
       "tone": "frustrated",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the discrepancy in the charge for your order #NV23456. We apologize for the confusion and the frustration this has caused. We are going to look into this matter urgently and investigate the additional $50 charge. Our records show that this charge was for a 'processing fee' that was added to your order. However, we understand that this was not clearly communicated to you. We would like to provide a detailed breakdown of the transaction and resolve the issue as soon as possible. Unfortunately, our customer service number is currently unavailable due to maintenance, but we will be happy to assist you via email. Please allow us 24-48 hours to investigate and resolve this issue. We will be in touch with an update as soon as possible.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your charge for Order #NV23456. We apologize for the confusion and any inconvenience this has caused. We are looking into this matter urgently and will investigate the 'processing fee' mentioned in your order confirmation email. We would like to request more information about your order to assist us in resolving this issue. Could you please provide your order details such as the item(s) purchased and the original payment method used? We will also make sure to look into the issue with our customer service number and get back to you as soon as possible. Once we have more information, we will be happy to assist you in resolving this issue to your satisfaction.",
       "retrieved_context_ids": [
         "complaint_017",
         "billing_002",
         "billing_000"
       ],
       "eval": {
-        "bertscore_f1": 0.9101,
-        "faithfulness_score": 0.5,
+        "bertscore_f1": 0.8972,
+        "faithfulness_score": 0.3333333333333333,
         "faithfulness_claims": [
           {
-            "claim": "We are going to look into this matter urgently",
+            "claim": "We are looking into this matter urgently",
             "supported": false
           },
           {
-            "claim": "Our records show that this charge was for a 'processing fee' that was added to your order",
+            "claim": "We will investigate the 'processing fee' mentioned in your order confirmation email",
             "supported": true
           },
           {
-            "claim": "However, we understand that this was not clearly communicated to you",
+            "claim": "We would like to request more information about your order to assist us in resolving this issue",
             "supported": true
           },
           {
-            "claim": "We would like to provide a detailed breakdown of the transaction",
+            "claim": "Could you please provide your order details such as the item(s) purchased and the original payment method used",
             "supported": false
           },
           {
-            "claim": "resolve the issue as soon as possible",
-            "supported": false
-          },
-          {
-            "claim": "Unfortunately, our customer service number is currently unavailable due to maintenance",
+            "claim": "We will also make sure to look into the issue with our customer service number",
             "supported": true
           },
           {
-            "claim": "but we will be happy to assist you via email",
+            "claim": "get back to you as soon as possible",
             "supported": false
           },
           {
-            "claim": "Please allow us 24-48 hours to investigate and resolve this issue",
-            "supported": false
-          },
-          {
-            "claim": "We will be in touch with an update as soon as possible",
+            "claim": "Once we have more information, we will be happy to assist you in resolving this issue to your satisfaction",
             "supported": false
           }
         ],
         "judge_scores": {
-          "relevance": 4,
+          "relevance": 3,
           "correctness": 3,
           "tone": 4,
-          "completeness": 3,
-          "judge_mean_1_5": 3.5,
-          "judge_normalized_0_1": 0.625
+          "completeness": 2,
+          "judge_mean_1_5": 3,
+          "judge_normalized_0_1": 0.5
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply does not provide a clear resolution to the issue, unlike the reference reply which explicitly states that the charge will be refunded and provides a timeframe for the refund. The candidate reply also does not update the customer on the status of their order, which is something the reference reply does.",
-            "relevance": 4,
-            "correctness": 3,
+            "reasoning": "The candidate reply does not directly address the customer's concern about the incorrect charge, and instead asks for additional information which may not be necessary. It also does not provide a clear resolution or timeline for resolving the issue.",
+            "relevance": 3,
+            "correctness": 2,
             "tone": 4,
-            "completeness": 3
+            "completeness": 2
           },
           {
-            "reasoning": "The candidate reply lacks a clear explanation of the 'processing fee' and does not explicitly state that the charge will be refunded. It also does not provide a specific timeframe for the refund or an update on the customer service issue.",
-            "relevance": 4,
-            "correctness": 3,
+            "reasoning": "The candidate reply acknowledges the customer's issue, apologizes for the inconvenience, and promises to investigate. However, it requests additional information from the customer, which is not necessary given the context of the issue. The reference reply provides a clear resolution to the issue without asking for more information.",
+            "relevance": 3,
+            "correctness": 4,
             "tone": 4,
-            "completeness": 3
+            "completeness": 2
           }
         ],
-        "composite_score": 0.6525
+        "composite_score": 0.541
       }
     },
     {
@@ -173,52 +178,40 @@
       "id": "billing_002",
       "category": "billing",
       "tone": "urgent",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding the charge on your order #NV12345. We apologize for the confusion caused by the unrecognized charge and the inconvenience it has caused. After reviewing your order, we have determined that the additional $45 charge was an error on our part. The correct total for your order was $98.99, and we will promptly refund the incorrect charge. You should see the refund of $45 in your account within the next 3-5 business days. We are also aware of the technical issue with our website's login system and are working to resolve it as soon as possible. In the meantime, please feel free to reach out to us via email for any further assistance. Your order #NV12345 has been updated, and you can view the corrected total by contacting our customer service team once the technical issue is resolved. Thank you for your patience and understanding.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding the charge on your order #NV12345. We apologize for the confusion caused by the incorrect charge and the inconvenience it has caused. After reviewing your order, we have determined that the additional $45 charge was an error on our part. We would like to provide a detailed breakdown of the transaction, but to do so, we need to verify your account information. Could you please reply to this email with your order details, including the payment method used, and we will promptly correct the charge and provide you with the necessary information? You should see the corrected charge in your account within the next 3-5 business days. We are also aware of the technical issue with our login system and are working to resolve it as soon as possible. In the meantime, please feel free to reach out to us via email for any further assistance. Thank you for your patience and understanding.",
       "retrieved_context_ids": [
         "refund_request_011",
         "billing_001",
         "billing_000"
       ],
       "eval": {
-        "bertscore_f1": 0.9002,
-        "faithfulness_score": 1.0,
+        "bertscore_f1": 0.9008,
+        "faithfulness_score": 0.5,
         "faithfulness_claims": [
           {
             "claim": "the additional $45 charge was an error on our part",
+            "supported": false
+          },
+          {
+            "claim": "we need to verify your account information",
+            "supported": false
+          },
+          {
+            "claim": "you should see the corrected charge in your account within the next 3-5 business days",
             "supported": true
           },
           {
-            "claim": "the correct total for your order was $98.99",
-            "supported": true
-          },
-          {
-            "claim": "we will promptly refund the incorrect charge",
-            "supported": true
-          },
-          {
-            "claim": "you should see the refund of $45 in your account within the next 3-5 business days",
-            "supported": true
-          },
-          {
-            "claim": "we are also aware of the technical issue with our website's login system",
+            "claim": "we are also aware of the technical issue with our login system",
             "supported": true
           },
           {
             "claim": "we are working to resolve it as soon as possible",
             "supported": true
-          },
-          {
-            "claim": "you can view the corrected total by contacting our customer service team once the technical issue is resolved",
-            "supported": true
-          },
-          {
-            "claim": "your order #NV12345 has been updated",
-            "supported": true
           }
         ],
         "judge_scores": {
-          "relevance": 3.5,
-          "correctness": 2.5,
+          "relevance": 4,
+          "correctness": 2,
           "tone": 4,
           "completeness": 3,
           "judge_mean_1_5": 3.25,
@@ -226,21 +219,21 @@
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply does not provide a clear explanation for the additional charge, instead stating it was an error on our part without specifying what the correct total was for. It also does not mention the 'Priority Shipping' option or the 'Authentication Failed: Code 421' issue. The tone is apologetic, but it does not offer the same level of detail and assistance as the reference reply.",
-            "relevance": 3,
+            "reasoning": "The candidate reply acknowledges the customer's issue, apologizes for the confusion, and offers to correct the charge. However, it fails to provide a clear explanation for the additional charge and does not offer a refund. The reply also asks the customer to provide their order details, which is not necessary given that the order number is provided.",
+            "relevance": 4,
             "correctness": 2,
             "tone": 4,
-            "completeness": 2
+            "completeness": 3
           },
           {
-            "reasoning": "The candidate reply lacks a clear explanation for the additional charge, and instead attributes it to an 'error on our part'. This does not provide the same level of transparency as the reference reply, which clearly states that the additional charge was for 'Priority Shipping'.",
+            "reasoning": "The candidate reply acknowledges the customer's issue, apologizes for the confusion, and offers to correct the charge. However, it fails to provide a clear explanation for the additional charge and instead asks the customer to provide their order details. The reply also mentions the technical issue with the login system but does not offer a specific solution or workaround.",
             "relevance": 4,
-            "correctness": 3,
+            "correctness": 2,
             "tone": 4,
-            "completeness": 4
+            "completeness": 3
           }
         ],
-        "composite_score": 0.8
+        "composite_score": 0.6252
       }
     },
     {
@@ -250,116 +243,43 @@
       "id": "billing_003",
       "category": "billing",
       "tone": "polite",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the discrepancy in the charge for your order #ORD12345. We apologize for the confusion. After investigating, we found that there was an error in our system that added a $30 shipping surcharge to your order, which was not reflected in your initial order confirmation. The correct total for your order, including the shipping surcharge, is indeed $129.99. However, since this was not clearly communicated to you, we would like to adjust your charge accordingly and refund the $30 shipping surcharge back to your credit card as a one-time courtesy. You should receive the refund within the next 3-5 business days. If you have any further questions or concerns, please don't hesitate to contact us.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the discrepancy in the charge for your order #ORD12345. We apologize for the confusion. After investigating, we found that there was a price increase on the X500 wireless headphones that occurred after your purchase on February 10th. The correct total for your order is indeed $129.99, which reflects the updated price at the time of your purchase. If you would like, we can provide a refund for the price difference of $30, or we can issue a store credit for the same amount. Please let us know your preferred resolution, and we will be happy to assist you further.",
       "retrieved_context_ids": [
         "billing_000",
         "sales_inquiry_014",
         "sales_inquiry_012"
       ],
       "eval": {
-        "bertscore_f1": 0.9223,
-        "faithfulness_score": 0.0,
+        "bertscore_f1": 0.9245,
+        "faithfulness_score": 0.75,
         "faithfulness_claims": [
           {
-            "claim": "There was an error in our system that added a $30 shipping surcharge to your order",
+            "claim": "There was a price increase on the X500 wireless headphones after February 10th.",
             "supported": false
           },
           {
-            "claim": "The correct total for your order, including the shipping surcharge, is indeed $129.99",
+            "claim": "The correct total for the order is indeed $129.99.",
+            "supported": true
+          },
+          {
+            "claim": "The updated price at the time of purchase was $129.99.",
+            "supported": true
+          },
+          {
+            "claim": "The price difference is $30.",
+            "supported": true
+          },
+          {
+            "claim": "The customer would like a refund for the price difference.",
             "supported": false
           },
           {
-            "claim": "The correct total for your order, including the shipping surcharge, is indeed $129.99",
+            "claim": "The customer would like a store credit for the price difference.",
             "supported": false
           },
           {
-            "claim": "We would like to adjust your charge accordingly and refund the $30 shipping surcharge back to your credit card as a one-time courtesy",
+            "claim": "The customer can choose between a refund and a store credit.",
             "supported": false
-          },
-          {
-            "claim": "You should receive the refund within the next 3-5 business days",
-            "supported": false
-          },
-          {
-            "claim": "The correct total for your order, including the shipping surcharge, is indeed $129.99",
-            "supported": false
-          }
-        ],
-        "judge_scores": {
-          "relevance": 2,
-          "correctness": 2,
-          "tone": 4,
-          "completeness": 2.5,
-          "judge_mean_1_5": 2.62,
-          "judge_normalized_0_1": 0.405
-        },
-        "judge_raw_runs": [
-          {
-            "reasoning": "The candidate reply attempts to address the customer's concern but introduces a new, unrelated issue (shipping surcharge) and fails to acknowledge the actual price increase of the product. It also does not provide a refund for the correct price difference.",
-            "relevance": 2,
-            "correctness": 2,
-            "tone": 4,
-            "completeness": 2
-          },
-          {
-            "reasoning": "The candidate reply attempts to address the customer's concern but introduces a new, unmentioned issue (shipping surcharge) that was not present in the reference reply. The reply also fails to acknowledge the price increase on the product.",
-            "relevance": 2,
-            "correctness": 2,
-            "tone": 4,
-            "completeness": 3
-          }
-        ],
-        "composite_score": 0.3926
-      }
-    },
-    {
-      "subject": "Issue with Order #NV12345 - Missing Feature in X500 Printer Driver",
-      "body": "Hello Support Team, I'm writing to report an issue with my X500 printer driver. I recently placed an order (#NV12345) on February 10th, and after installing the driver, I noticed that the 'Double Sided Printing' feature is missing. I've tried reinstalling the driver multiple times, but the issue persists. The order total was $120.50, and I'm concerned that I might have received a defective or outdated driver. Could you please look into this matter and provide a solution? The error message I receive when trying to access the feature is 'Error 0x000007 - Feature Not Found'. I would appreciate it if you could assist me in resolving this issue as soon as possible.",
-      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 printer driver. We apologize for the inconvenience you're experiencing with the missing 'Double Sided Printing' feature. We've checked on Order #NV12345 and confirmed that the driver you received should have included this feature. We're going to provide you with an updated driver that should resolve the 'Error 0x000007 - Feature Not Found' issue. Please find the download link for the updated driver here: [insert link]. If you have any further issues or concerns after installing the updated driver, please don't hesitate to contact us. Your order total of $120.50 will not be affected by this update, and you will not be charged any additional fees. We appreciate your patience and cooperation in this matter, and we're confident that the updated driver will resolve the issue you're experiencing.",
-      "id": "technical_support_004",
-      "category": "technical_support",
-      "tone": "neutral",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 printer driver and order #NV12345. I apologize for the inconvenience caused by the missing 'Double Sided Printing' feature. I've checked on the status of your order and confirmed that it was shipped on February 12th. I'm going to go ahead and provide you with a replacement driver that includes the missing feature. You will receive a new download link via email once the replacement driver has been prepared. If you would prefer a physical copy of the driver on a CD or USB, please let me know and I'll be happy to arrange that for you. Please note that you will not need to return the defective driver, as we will send a new one with the corrected feature. If you have any further questions or concerns, please don't hesitate to contact me directly.",
-      "retrieved_context_ids": [
-        "complaint_018",
-        "complaint_016",
-        "sales_inquiry_013"
-      ],
-      "eval": {
-        "bertscore_f1": 0.9123,
-        "faithfulness_score": 0.8,
-        "faithfulness_claims": [
-          {
-            "claim": "the issue with your X500 printer driver and order #NV12345",
-            "supported": true
-          },
-          {
-            "claim": "the missing 'Double Sided Printing' feature",
-            "supported": true
-          },
-          {
-            "claim": "I've checked on the status of your order and confirmed that it was shipped on February 12th",
-            "supported": false
-          },
-          {
-            "claim": "a replacement driver that includes the missing feature",
-            "supported": true
-          },
-          {
-            "claim": "you will receive a new download link via email once the replacement driver has been prepared",
-            "supported": true
-          },
-          {
-            "claim": "If you would prefer a physical copy of the driver on a CD or USB, please let me know and I'll be happy to arrange that for you",
-            "supported": true
-          },
-          {
-            "claim": "you will not need to return the defective driver, as we will send a new one with the corrected feature",
-            "supported": true
-          },
-          {
-            "claim": "If you have any further questions or concerns, please don't hesitate to contact me directly",
-            "supported": true
           }
         ],
         "judge_scores": {
@@ -372,21 +292,82 @@
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply is close to the reference reply in terms of content, but it lacks some key details and clarity. The reference reply explicitly states that the issue is due to a missing feature in the driver, and provides a clear solution by offering a download link for the updated driver. The candidate reply, on the other hand, mentions a replacement driver, but does not provide a clear solution or a download link.",
+            "reasoning": "The candidate reply acknowledges the customer's concern, apologizes for the confusion, and offers a resolution, but it does not clearly explain the reason for the price increase or provide a clear refund process as the reference reply does.",
             "relevance": 4,
             "correctness": 3,
             "tone": 4,
             "completeness": 3
           },
           {
-            "reasoning": "The candidate reply addresses the customer's concern, but it introduces some inaccuracies and inconsistencies with the reference reply.",
+            "reasoning": "The candidate reply acknowledges the customer's concern, apologizes for the confusion, and offers a resolution. However, it does not explicitly state the reason for the price increase or the time at which it occurred, which is clearly explained in the reference reply.",
             "relevance": 4,
             "correctness": 3,
             "tone": 4,
             "completeness": 3
           }
         ],
-        "composite_score": 0.7581
+        "composite_score": 0.7436
+      }
+    },
+    {
+      "subject": "Issue with Order #NV12345 - Missing Feature in X500 Printer Driver",
+      "body": "Hello Support Team, I'm writing to report an issue with my X500 printer driver. I recently placed an order (#NV12345) on February 10th, and after installing the driver, I noticed that the 'Double Sided Printing' feature is missing. I've tried reinstalling the driver multiple times, but the issue persists. The order total was $120.50, and I'm concerned that I might have received a defective or outdated driver. Could you please look into this matter and provide a solution? The error message I receive when trying to access the feature is 'Error 0x000007 - Feature Not Found'. I would appreciate it if you could assist me in resolving this issue as soon as possible.",
+      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 printer driver. We apologize for the inconvenience you're experiencing with the missing 'Double Sided Printing' feature. We've checked on Order #NV12345 and confirmed that the driver you received should have included this feature. We're going to provide you with an updated driver that should resolve the 'Error 0x000007 - Feature Not Found' issue. Please find the download link for the updated driver here: [insert link]. If you have any further issues or concerns after installing the updated driver, please don't hesitate to contact us. Your order total of $120.50 will not be affected by this update, and you will not be charged any additional fees. We appreciate your patience and cooperation in this matter, and we're confident that the updated driver will resolve the issue you're experiencing.",
+      "id": "technical_support_004",
+      "category": "technical_support",
+      "tone": "neutral",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 printer driver and the missing 'Double Sided Printing' feature. I apologize for the inconvenience this has caused. I've checked on the status of your order #NV12345 and confirmed that it was processed on February 10th. I'm going to go ahead and process an updated driver for you, which will be sent to you via email as soon as it's available. In the meantime, I'd like to request more information about your printer and operating system to ensure that the updated driver is compatible with your setup. Could you please provide me with the following details: your printer's serial number, your operating system version, and any other relevant information about your printer configuration? Once I have this information, I'll be able to assist you further and provide a solution to this issue.",
+      "retrieved_context_ids": [
+        "complaint_018",
+        "complaint_016",
+        "sales_inquiry_013"
+      ],
+      "eval": {
+        "bertscore_f1": 0.8989,
+        "faithfulness_score": 0.5,
+        "faithfulness_claims": [
+          {
+            "claim": "I've checked on the status of your order #NV12345 and confirmed that it was processed on February 10th.",
+            "supported": true
+          },
+          {
+            "claim": "I'm going to go ahead and process an updated driver for you, which will be sent to you via email as soon as it's available.",
+            "supported": true
+          },
+          {
+            "claim": "Could you please provide me with the following details: your printer's serial number, your operating system version, and any other relevant information about your printer configuration?",
+            "supported": false
+          },
+          {
+            "claim": "Once I have this information, I'll be able to assist you further and provide a solution to this issue.",
+            "supported": false
+          }
+        ],
+        "judge_scores": {
+          "relevance": 3.5,
+          "correctness": 2.5,
+          "tone": 4,
+          "completeness": 2,
+          "judge_mean_1_5": 3.0,
+          "judge_normalized_0_1": 0.5
+        },
+        "judge_raw_runs": [
+          {
+            "reasoning": "The candidate reply acknowledges the customer's issue, apologizes for the inconvenience, and offers to assist further. However, it asks for additional information from the customer, which is not necessary in the reference reply. The candidate reply also does not provide a direct solution or a download link for the updated driver.",
+            "relevance": 4,
+            "correctness": 3,
+            "tone": 4,
+            "completeness": 2
+          },
+          {
+            "reasoning": "The candidate reply acknowledges the customer's issue and apologizes for the inconvenience, but it doesn't directly address the root cause of the problem and doesn't provide a clear solution. It also requests additional information from the customer, which may cause delays in resolving the issue.",
+            "relevance": 3,
+            "correctness": 2,
+            "tone": 4,
+            "completeness": 2
+          }
+        ],
+        "composite_score": 0.5997
       }
     },
     {
@@ -396,66 +377,62 @@
       "id": "technical_support_005",
       "category": "technical_support",
       "tone": "frustrated",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV456789. We apologize for the inconvenience you've experienced while trying to complete your order. I've checked on the status of your order, and it appears that there was an issue with the expiration date of your Visa card being recognized by our system. I've gone ahead and manually checked your card details, and I'm happy to inform you that the issue should be resolved now. Please try checking out again with your Visa card. If you continue to experience any issues, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV456789. We apologize for the inconvenience you've experienced with the payment processing. I've checked on the status of your order, and it appears that there was an issue with the expiration date of your Visa card. I've gone ahead and manually reviewed the order, and I'm happy to inform you that the issue has been resolved. Your order for the Bose QuietComfort 35 II headphones for $349.95 has been successfully processed, and you should receive an email with the order confirmation details shortly. If you have any further questions or concerns, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
       "retrieved_context_ids": [
         "technical_support_006",
         "billing_001",
         "billing_000"
       ],
       "eval": {
-        "bertscore_f1": 0.923,
-        "faithfulness_score": 0.5,
+        "bertscore_f1": 0.9522,
+        "faithfulness_score": 0.0,
         "faithfulness_claims": [
           {
-            "claim": "there was an issue with the expiration date of your Visa card being recognized by our system",
-            "supported": true
-          },
-          {
-            "claim": "I've gone ahead and manually checked your card details",
-            "supported": true
-          },
-          {
-            "claim": "the issue should be resolved now",
+            "claim": "the issue with the payment processing was with the expiration date of the Visa card",
             "supported": false
           },
           {
-            "claim": "Please try checking out again with your Visa card",
+            "claim": "the issue has been resolved",
             "supported": false
           },
           {
-            "claim": "If you continue to experience any issues, please don't hesitate to contact us",
+            "claim": "the order for the Bose QuietComfort 35 II headphones for $349.95 has been successfully processed",
             "supported": false
           },
           {
-            "claim": "We appreciate your patience and cooperation in this matter",
+            "claim": "you should receive an email with the order confirmation details shortly",
+            "supported": false
+          },
+          {
+            "claim": "the customer's Visa card had an issue with the expiration date",
             "supported": false
           }
         ],
         "judge_scores": {
-          "relevance": 2,
+          "relevance": 3,
           "correctness": 2,
-          "tone": 3,
-          "completeness": 2,
-          "judge_mean_1_5": 2.25,
-          "judge_normalized_0_1": 0.3125
+          "tone": 3.5,
+          "completeness": 2.5,
+          "judge_mean_1_5": 2.75,
+          "judge_normalized_0_1": 0.4375
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply attempts to address the customer's issue but introduces a key inaccuracy regarding the cause of the error. It also fails to provide a clear resolution or additional support.",
-            "relevance": 2,
+            "reasoning": "The candidate reply does not address the customer's concern about the error message 'Transaction failed: Invalid expiration date' being unrelated to their card's expiration date. It also does not provide a clear explanation for the resolution of the issue.",
+            "relevance": 3,
             "correctness": 2,
-            "tone": 3,
-            "completeness": 2
+            "tone": 4,
+            "completeness": 3
           },
           {
-            "reasoning": "The candidate reply does not address the root cause of the issue, instead blaming the customer's Visa card expiration date. It also fails to provide a clear resolution or next steps, and does not offer a confirmation of order processing or shipping details.",
-            "relevance": 2,
+            "reasoning": "The candidate reply attempts to address the customer's issue but incorrectly identifies the root cause of the problem. It also fails to provide a clear explanation for the manual review and resolution of the order. The tone is somewhat apologetic, but it lacks the level of empathy and detail found in the reference reply.",
+            "relevance": 3,
             "correctness": 2,
             "tone": 3,
             "completeness": 2
           }
         ],
-        "composite_score": 0.5308
+        "composite_score": 0.4131
       }
     },
     {
@@ -465,15 +442,15 @@
       "id": "technical_support_006",
       "category": "technical_support",
       "tone": "urgent",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #INV12345 for the EchoFrame Speaker. I apologize for the inconvenience you've experienced with tracking your order and the error message 'Tracking information not available for this order'. I've checked on the status of your order and it appears that there was an issue with the shipping process. I've requested an update from the shipping carrier and I will provide you with a revised estimated delivery date as soon as possible. In the meantime, I've also requested that a replacement order be shipped to you via expedited shipping, at no additional cost to you. You will receive an email with the new tracking information as soon as the replacement order is shipped. Please allow 24-48 hours for the new tracking information to be updated. If you have any further questions or concerns, please do not hesitate to contact us. Your original order total of $249.99 will still be honored and you will not be charged for the replacement order. Thank you for your patience and understanding.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #INV12345 for the EchoFrame Speaker. I apologize for the inconvenience you've experienced with the error message 'Tracking information not available for this order' and the delay in receiving your order. I've checked on the status of your order and it appears that there was an issue with the shipping process. I've escalated this issue to our shipping team and they will be in touch with you within the next 24 hours to provide an update on the status of your order. In the meantime, I've also gone ahead and processed a replacement order for you, which will be shipped out via expedited shipping to ensure it arrives as soon as possible. You will receive a new tracking number via email once the replacement order has shipped. Please let me know if there's anything else I can assist you with. Your replacement order is being processed and you will receive the new tracking information as soon as it's available. Thank you for your patience and understanding.",
       "retrieved_context_ids": [
         "complaint_018",
         "refund_request_009",
         "complaint_019"
       ],
       "eval": {
-        "bertscore_f1": 0.9232,
-        "faithfulness_score": 0.5,
+        "bertscore_f1": 0.9119,
+        "faithfulness_score": 0.6,
         "faithfulness_claims": [
           {
             "claim": "I've checked on the status of your order",
@@ -481,245 +458,6 @@
           },
           {
             "claim": "there was an issue with the shipping process",
-            "supported": false
-          },
-          {
-            "claim": "I've requested an update from the shipping carrier",
-            "supported": false
-          },
-          {
-            "claim": "I will provide you with a revised estimated delivery date as soon as possible",
-            "supported": false
-          },
-          {
-            "claim": "a replacement order be shipped to you via expedited shipping, at no additional cost to you",
-            "supported": false
-          },
-          {
-            "claim": "You will receive an email with the new tracking information as soon as the replacement order is shipped",
-            "supported": false
-          },
-          {
-            "claim": "Please allow 24-48 hours for the new tracking information to be updated",
-            "supported": false
-          },
-          {
-            "claim": "Your original order total of $249.99 will still be honored and you will not be charged for the replacement order",
-            "supported": true
-          },
-          {
-            "claim": "order #INV12345",
-            "supported": true
-          },
-          {
-            "claim": "for the EchoFrame Speaker",
-            "supported": true
-          },
-          {
-            "claim": "I apologize for the inconvenience you've experienced with tracking your order and the error message 'Tracking information not available for this order'",
-            "supported": true
-          }
-        ],
-        "judge_scores": {
-          "relevance": 4,
-          "correctness": 2.5,
-          "tone": 4,
-          "completeness": 3.5,
-          "judge_mean_1_5": 3.5,
-          "judge_normalized_0_1": 0.625
-        },
-        "judge_raw_runs": [
-          {
-            "reasoning": "The candidate reply attempts to address the customer's issue with the EchoFrame Speaker order, but it introduces some inaccuracies and overpromises. It also fails to acknowledge the customer's payment method and order date.",
-            "relevance": 4,
-            "correctness": 2,
-            "tone": 4,
-            "completeness": 3
-          },
-          {
-            "reasoning": "The candidate reply attempts to address the customer's issue, but introduces a replacement order without the customer's consent, which may not be what the customer wants. It also doesn't provide a clear explanation for the original issue with the shipping details not being updated correctly.",
-            "relevance": 4,
-            "correctness": 3,
-            "tone": 4,
-            "completeness": 4
-          }
-        ],
-        "composite_score": 0.6558
-      }
-    },
-    {
-      "subject": "Issue with Order #NV23456 - Smart Speaker Not Connecting",
-      "body": "Hi Support Team, I'm reaching out about an issue I'm having with my recent order #NV23456, which I received on January 10th. I purchased the X5 Smart Speaker for $129.99, but I'm having trouble connecting it to my Wi-Fi network. Every time I try to connect, I get an error message saying 'Failed to connect: APNotFound'. I've tried restarting the speaker and my router, but the issue persists. Could you please help me resolve this issue? I've already spent a few hours trying to troubleshoot it myself.",
-      "gold_reply": "Dear valued customer, thank you for reporting the issue with your X5 Smart Speaker from order #NV23456. I apologize for the inconvenience caused by the 'Failed to connect: APNotFound' error message. I've checked on the status of your order, which was indeed shipped on January 5th and delivered on January 10th as you mentioned. To resolve the connectivity issue, I recommend trying to reset the speaker to its factory settings and then attempting to connect it to your Wi-Fi network again. Please refer to page 12 of the user manual for the reset instructions. If the issue persists, please provide me with the Wi-Fi network name and password you're using, and I'll be happy to further assist you in troubleshooting the problem. Your patience and cooperation are greatly appreciated, and I look forward to resolving this matter for you.",
-      "id": "technical_support_007",
-      "category": "technical_support",
-      "tone": "polite",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV23456. I apologize for the inconvenience you've experienced with your X5 Smart Speaker. I've checked on the status of your order, and it appears that the error message 'Failed to connect: APNotFound' is not related to your speaker itself, but rather a technical issue on our end. I've gone ahead and manually reset the speaker's connection settings, and I'm happy to inform you that your speaker should now be able to connect to your Wi-Fi network successfully. If you continue to experience any issues, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
-      "retrieved_context_ids": [
-        "technical_support_005",
-        "complaint_017",
-        "technical_support_006"
-      ],
-      "eval": {
-        "bertscore_f1": 0.9185,
-        "faithfulness_score": 0.4,
-        "faithfulness_claims": [
-          {
-            "claim": "the error message 'Failed to connect: APNotFound' is not related to your speaker itself, but rather a technical issue on our end",
-            "supported": false
-          },
-          {
-            "claim": "I've gone ahead and manually reset the speaker's connection settings",
-            "supported": false
-          },
-          {
-            "claim": "your speaker should now be able to connect to your Wi-Fi network successfully",
-            "supported": false
-          },
-          {
-            "claim": "I've checked on the status of your order",
-            "supported": true
-          },
-          {
-            "claim": "the issue persists",
-            "supported": true
-          },
-          {
-            "claim": "I've already spent a few hours trying to troubleshoot it myself",
-            "supported": true
-          },
-          {
-            "claim": "I apologize for the inconvenience you've experienced with your X5 Smart Speaker",
-            "supported": true
-          },
-          {
-            "claim": "I've checked on the status of your order, and it appears that the error message 'Failed to connect: APNotFound' is not related to your speaker itself, but rather a technical issue on our end",
-            "supported": false
-          },
-          {
-            "claim": "If you continue to experience any issues, please don't hesitate to contact us",
-            "supported": false
-          },
-          {
-            "claim": "We appreciate your patience and cooperation in this matter",
-            "supported": false
-          }
-        ],
-        "judge_scores": {
-          "relevance": 3,
-          "correctness": 2,
-          "tone": 4,
-          "completeness": 2,
-          "judge_mean_1_5": 2.75,
-          "judge_normalized_0_1": 0.4375
-        },
-        "judge_raw_runs": [
-          {
-            "reasoning": "The candidate reply lacks a clear explanation of the issue and the solution, and it implies that the problem is on the company's end without providing any evidence or context. The reference reply, on the other hand, provides a clear explanation of the issue and a step-by-step solution, while also acknowledging the customer's efforts to troubleshoot the problem.",
-            "relevance": 3,
-            "correctness": 2,
-            "tone": 4,
-            "completeness": 2
-          },
-          {
-            "reasoning": "The candidate reply does not provide a clear resolution path for the customer, nor does it acknowledge the customer's troubleshooting efforts. It also implies that the issue is on the company's end, which may not be the case. The reference reply, on the other hand, provides a clear step-by-step solution and acknowledges the customer's efforts.",
-            "relevance": 3,
-            "correctness": 2,
-            "tone": 4,
-            "completeness": 2
-          }
-        ],
-        "composite_score": 0.5446
-      }
-    },
-    {
-      "subject": "Request for Refund for Order #NZ12345",
-      "body": "Dear Support Team, I am writing to request a refund for my recent purchase. On February 10th, I ordered the 'EcoSmart 5000' water filter system for $249.99, but unfortunately, it arrived damaged. The order number for this purchase is #NZ12345. I would greatly appreciate it if you could assist me with the refund process as soon as possible. Please let me know if there's any additional information you need from me to facilitate this. Thank you for your time and assistance.",
-      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your EcoSmart 5000 water filter system, order #NZ12345. We apologize for the inconvenience caused by the damaged product. We are happy to assist you with a full refund of $249.99. Please allow 3-5 business days for the refund to be processed. You will receive an email confirmation once the refund has been issued. If you have any further questions or concerns, please do not hesitate to contact us. Thank you for your patience and understanding.",
-      "id": "refund_request_008",
-      "category": "refund_request",
-      "tone": "neutral",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the inconvenience caused by the damaged 'EcoSmart 5000' water filter system. I'm happy to inform you that I've initiated a full refund of $249.99, which will be processed within the next 24-48 hours. You will receive an email notification once the refund is completed. If you have any further questions or concerns, please don't hesitate to contact us.",
-      "retrieved_context_ids": [
-        "refund_request_010",
-        "refund_request_011",
-        "complaint_019"
-      ],
-      "eval": {
-        "bertscore_f1": 0.9569,
-        "faithfulness_score": 0.75,
-        "faithfulness_claims": [
-          {
-            "claim": "order #NZ12345",
-            "supported": true
-          },
-          {
-            "claim": "the 'EcoSmart 5000' water filter system was damaged",
-            "supported": true
-          },
-          {
-            "claim": "a full refund of $249.99 will be processed",
-            "supported": true
-          },
-          {
-            "claim": "the refund will be processed within the next 24-48 hours",
-            "supported": false
-          },
-          {
-            "claim": "an email notification will be sent once the refund is completed",
-            "supported": true
-          }
-        ],
-        "judge_scores": {
-          "relevance": 5,
-          "correctness": 4,
-          "tone": 5,
-          "completeness": 4,
-          "judge_mean_1_5": 4.5,
-          "judge_normalized_0_1": 0.875
-        },
-        "judge_raw_runs": [
-          {
-            "reasoning": "The candidate reply is clear and concise, but lacks some details found in the reference reply.",
-            "relevance": 5,
-            "correctness": 4,
-            "tone": 5,
-            "completeness": 4
-          },
-          {
-            "reasoning": "The candidate reply is close to the reference reply but lacks some details and uses a different timeframe for the refund processing.",
-            "relevance": 5,
-            "correctness": 4,
-            "tone": 5,
-            "completeness": 4
-          }
-        ],
-        "composite_score": 0.8517
-      }
-    },
-    {
-      "subject": "Refund Request for Order #NX456789",
-      "body": "I am writing to request a refund for my order #NX456789, which I placed on February 10th for the 'X500 Pro Wireless Headphones'. The order total was $129.99. When I tried to track my order, I received an error message 'Tracking information not available for this order'. It's been over 3 weeks and I still haven't received my order. I've tried contacting the shipping company, but they said they never received the package from your warehouse. I'm extremely frustrated with the lack of communication and would like a full refund as soon as possible.",
-      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NX456789. I apologize for the inconvenience you've experienced with the 'X500 Pro Wireless Headphones' and the error message 'Tracking information not available for this order'. I've checked on the status of your order and it appears that there was an issue with the shipping process. I'm going to go ahead and process a full refund of $129.99 for you, which you should receive within 5-7 business days. If you have any further questions or concerns, please don't hesitate to reach out to us. Your refund will be credited back to the original payment method. Please let me know if there's anything else I can assist you with.",
-      "id": "refund_request_009",
-      "category": "refund_request",
-      "tone": "frustrated",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #NX456789. I apologize for the delay in receiving your 'X500 Pro Wireless Headphones' and the inconvenience caused by the 'Tracking information not available for this order' error message. I've checked on the status of your order and it appears that there was an issue with the shipping label. I've escalated this issue to our shipping team and they will be in touch with you within the next 24 hours to provide an update on the status of your order. In the meantime, I've also gone ahead and processed a full refund of $129.99, which will be processed within the next 24-48 hours. You will receive an email notification once the refund is completed. If you have any further questions or concerns, please don't hesitate to contact us.",
-      "retrieved_context_ids": [
-        "refund_request_010",
-        "complaint_018",
-        "refund_request_011"
-      ],
-      "eval": {
-        "bertscore_f1": 0.9465,
-        "faithfulness_score": 0.75,
-        "faithfulness_claims": [
-          {
-            "claim": "I've checked on the status of your order",
-            "supported": false
-          },
-          {
-            "claim": "there was an issue with the shipping label",
             "supported": false
           },
           {
@@ -731,43 +469,282 @@
             "supported": false
           },
           {
-            "claim": "I've also gone ahead and processed a full refund of $129.99",
+            "claim": "a replacement order for you, which will be shipped out via expedited shipping",
+            "supported": false
+          },
+          {
+            "claim": "You will receive a new tracking number via email once the replacement order has shipped",
+            "supported": false
+          },
+          {
+            "claim": "Your replacement order is being processed",
+            "supported": false
+          },
+          {
+            "claim": "you will receive the new tracking information as soon as it's available",
+            "supported": false
+          },
+          {
+            "claim": "I've also gone ahead and processed a replacement order for you",
+            "supported": false
+          },
+          {
+            "claim": "I apologize for the inconvenience you've experienced with the error message 'Tracking information not available for this order' and the delay in receiving your order",
             "supported": true
           },
           {
-            "claim": "which will be processed within the next 24-48 hours",
+            "claim": "I apologize for the inconvenience you've experienced",
             "supported": true
           },
           {
-            "claim": "You will receive an email notification once the refund is completed",
+            "claim": "the error message 'Tracking information not available for this order'",
+            "supported": true
+          },
+          {
+            "claim": "the delay in receiving your order",
+            "supported": true
+          },
+          {
+            "claim": "the order #INV12345 for the EchoFrame Speaker",
+            "supported": true
+          },
+          {
+            "claim": "the order was for $249.99",
+            "supported": true
+          },
+          {
+            "claim": "you paid using your Visa card",
             "supported": true
           }
         ],
         "judge_scores": {
           "relevance": 4,
-          "correctness": 3.5,
+          "correctness": 2,
           "tone": 4,
-          "completeness": 3,
-          "judge_mean_1_5": 3.62,
-          "judge_normalized_0_1": 0.655
+          "completeness": 3.5,
+          "judge_mean_1_5": 3.38,
+          "judge_normalized_0_1": 0.595
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply is close to the reference reply, but it doesn't provide a clear resolution to the issue and doesn't offer a specific timeframe for the refund. It also doesn't mention crediting the refund back to the original payment method.",
+            "reasoning": "The candidate reply is overly aggressive in offering a replacement order without verifying the initial order's status or confirming the customer's preference for a replacement. It also introduces an unrealistic 24-hour timeline for the shipping team to respond.",
+            "relevance": 4,
+            "correctness": 2,
+            "tone": 3,
+            "completeness": 4
+          },
+          {
+            "reasoning": "The candidate reply attempts to address the customer's issue, but it introduces a replacement order without the customer's consent, which may not be the desired solution. The customer only requested an update on the status of their original order.",
+            "relevance": 4,
+            "correctness": 2,
+            "tone": 5,
+            "completeness": 3
+          }
+        ],
+        "composite_score": 0.676
+      }
+    },
+    {
+      "subject": "Issue with Order #NV23456 - Smart Speaker Not Connecting",
+      "body": "Hi Support Team, I'm reaching out about an issue I'm having with my recent order #NV23456, which I received on January 10th. I purchased the X5 Smart Speaker for $129.99, but I'm having trouble connecting it to my Wi-Fi network. Every time I try to connect, I get an error message saying 'Failed to connect: APNotFound'. I've tried restarting the speaker and my router, but the issue persists. Could you please help me resolve this issue? I've already spent a few hours trying to troubleshoot it myself.",
+      "gold_reply": "Dear valued customer, thank you for reporting the issue with your X5 Smart Speaker from order #NV23456. I apologize for the inconvenience caused by the 'Failed to connect: APNotFound' error message. I've checked on the status of your order, which was indeed shipped on January 5th and delivered on January 10th as you mentioned. To resolve the connectivity issue, I recommend trying to reset the speaker to its factory settings and then attempting to connect it to your Wi-Fi network again. Please refer to page 12 of the user manual for the reset instructions. If the issue persists, please provide me with the Wi-Fi network name and password you're using, and I'll be happy to further assist you in troubleshooting the problem. Your patience and cooperation are greatly appreciated, and I look forward to resolving this matter for you.",
+      "id": "technical_support_007",
+      "category": "technical_support",
+      "tone": "polite",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X5 Smart Speaker, order number #NV23456. We apologize for the inconvenience you've experienced with connecting the speaker to your Wi-Fi network. I've checked on the status of your order, and it appears that the issue is not related to any technical issues on our end. However, I would like to provide you with some additional troubleshooting steps to help resolve the issue. Please try resetting the speaker to its factory settings and then attempt to connect it to your Wi-Fi network again. If the issue persists, please contact our support team, and we will be happy to assist you further. Your order total of $129.99 will be processed as normal, and you will receive a confirmation email with the updated order status shortly. If you have any further questions or concerns, please don't hesitate to contact us.",
+      "retrieved_context_ids": [
+        "technical_support_005",
+        "complaint_017",
+        "technical_support_006"
+      ],
+      "eval": {
+        "bertscore_f1": 0.911,
+        "faithfulness_score": 0.5,
+        "faithfulness_claims": [
+          {
+            "claim": "the issue is not related to any technical issues on our end",
+            "supported": false
+          },
+          {
+            "claim": "resetting the speaker to its factory settings will help resolve the issue",
+            "supported": false
+          },
+          {
+            "claim": "the order total of $129.99 will be processed as normal",
+            "supported": true
+          },
+          {
+            "claim": "a confirmation email with the updated order status will be sent shortly",
+            "supported": true
+          },
+          {
+            "claim": "the order was received on January 10th",
+            "supported": false
+          }
+        ],
+        "judge_scores": {
+          "relevance": 4,
+          "correctness": 3.5,
+          "tone": 2.5,
+          "completeness": 3.5,
+          "judge_mean_1_5": 3.38,
+          "judge_normalized_0_1": 0.595
+        },
+        "judge_raw_runs": [
+          {
+            "reasoning": "The candidate reply lacks specific details about the order status, such as the actual shipping date, and does not provide a clear reference to the user manual for reset instructions. Additionally, it does not explicitly ask for the Wi-Fi network name and password, and the tone seems less empathetic compared to the reference reply.",
+            "relevance": 4,
+            "correctness": 4,
+            "tone": 3,
+            "completeness": 4
+          },
+          {
+            "reasoning": "The candidate reply lacks specific details about the order status, such as the exact delivery date, and does not provide a clear call to action for further assistance. The tone is somewhat abrupt, and the mention of the order total and confirmation email seems out of place.",
+            "relevance": 4,
+            "correctness": 3,
+            "tone": 2,
+            "completeness": 3
+          }
+        ],
+        "composite_score": 0.6407
+      }
+    },
+    {
+      "subject": "Request for Refund for Order #NZ12345",
+      "body": "Dear Support Team, I am writing to request a refund for my recent purchase. On February 10th, I ordered the 'EcoSmart 5000' water filter system for $249.99, but unfortunately, it arrived damaged. The order number for this purchase is #NZ12345. I would greatly appreciate it if you could assist me with the refund process as soon as possible. Please let me know if there's any additional information you need from me to facilitate this. Thank you for your time and assistance.",
+      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your EcoSmart 5000 water filter system, order #NZ12345. We apologize for the inconvenience caused by the damaged product. We are happy to assist you with a full refund of $249.99. Please allow 3-5 business days for the refund to be processed. You will receive an email confirmation once the refund has been issued. If you have any further questions or concerns, please do not hesitate to contact us. Thank you for your patience and understanding.",
+      "id": "refund_request_008",
+      "category": "refund_request",
+      "tone": "neutral",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the inconvenience caused by the damaged 'EcoSmart 5000' water filter system. I've located your order and see that it was indeed shipped to you on February 10th. We'd be happy to assist you with a refund. As per our return policy, we can offer a full refund of $249.99. Please provide us with a photo of the damaged item and your return address so we can process the refund accordingly. If you have any questions or concerns, please don't hesitate to contact us.",
+      "retrieved_context_ids": [
+        "refund_request_010",
+        "refund_request_011",
+        "complaint_019"
+      ],
+      "eval": {
+        "bertscore_f1": 0.934,
+        "faithfulness_score": 1.0,
+        "faithfulness_claims": [
+          {
+            "claim": "order #NZ12345 was located",
+            "supported": true
+          },
+          {
+            "claim": "order #NZ12345 was shipped on February 10th",
+            "supported": true
+          },
+          {
+            "claim": "a full refund of $249.99 is offered",
+            "supported": true
+          },
+          {
+            "claim": "a photo of the damaged item is required for refund",
+            "supported": true
+          },
+          {
+            "claim": "a return address is required for refund",
+            "supported": true
+          }
+        ],
+        "judge_scores": {
+          "relevance": 4.5,
+          "correctness": 4,
+          "tone": 4.5,
+          "completeness": 3.5,
+          "judge_mean_1_5": 4.12,
+          "judge_normalized_0_1": 0.78
+        },
+        "judge_raw_runs": [
+          {
+            "reasoning": "The candidate reply is close to the reference reply in terms of content, but lacks clarity and directness in its language. It also requires additional information from the customer, whereas the reference reply is more proactive in offering a solution.",
             "relevance": 4,
             "correctness": 4,
             "tone": 4,
             "completeness": 3
           },
           {
-            "reasoning": "The candidate reply is close to the reference reply in terms of content, but lacks some key details and clarity. It also introduces a new timeline for the refund and shipping update that is not present in the reference reply.",
+            "reasoning": "The candidate reply is close to the reference reply but lacks a clear timeline for refund processing and does not explicitly mention an email confirmation. It also requires additional information from the customer that the reference reply does not.",
+            "relevance": 5,
+            "correctness": 4,
+            "tone": 5,
+            "completeness": 4
+          }
+        ],
+        "composite_score": 0.8955
+      }
+    },
+    {
+      "subject": "Refund Request for Order #NX456789",
+      "body": "I am writing to request a refund for my order #NX456789, which I placed on February 10th for the 'X500 Pro Wireless Headphones'. The order total was $129.99. When I tried to track my order, I received an error message 'Tracking information not available for this order'. It's been over 3 weeks and I still haven't received my order. I've tried contacting the shipping company, but they said they never received the package from your warehouse. I'm extremely frustrated with the lack of communication and would like a full refund as soon as possible.",
+      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NX456789. I apologize for the inconvenience you've experienced with the 'X500 Pro Wireless Headphones' and the error message 'Tracking information not available for this order'. I've checked on the status of your order and it appears that there was an issue with the shipping process. I'm going to go ahead and process a full refund of $129.99 for you, which you should receive within 5-7 business days. If you have any further questions or concerns, please don't hesitate to reach out to us. Your refund will be credited back to the original payment method. Please let me know if there's anything else I can assist you with.",
+      "id": "refund_request_009",
+      "category": "refund_request",
+      "tone": "frustrated",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #NX456789. I apologize for the delay in receiving your 'X500 Pro Wireless Headphones' and the inconvenience caused by the 'Tracking information not available for this order' error message. I've located your order and see that it was indeed supposed to be delivered within the estimated timeframe. I'm happy to inform you that I've initiated a full refund of $129.99, which will be processed within the next 24-48 hours. You will receive an email notification once the refund is completed. If you have any further questions or concerns, please don't hesitate to contact us.",
+      "retrieved_context_ids": [
+        "refund_request_010",
+        "complaint_018",
+        "refund_request_011"
+      ],
+      "eval": {
+        "bertscore_f1": 0.9428,
+        "faithfulness_score": 0.8571428571428571,
+        "faithfulness_claims": [
+          {
+            "claim": "order #NX456789 was placed on February 10th",
+            "supported": false
+          },
+          {
+            "claim": "order #NX456789 was supposed to be delivered within the estimated timeframe",
+            "supported": true
+          },
+          {
+            "claim": "a full refund of $129.99 was initiated",
+            "supported": true
+          },
+          {
+            "claim": "the refund will be processed within the next 24-48 hours",
+            "supported": true
+          },
+          {
+            "claim": "an email notification will be sent once the refund is completed",
+            "supported": true
+          },
+          {
+            "claim": "the 'Tracking information not available for this order' error message was received",
+            "supported": true
+          },
+          {
+            "claim": "it's been over 3 weeks since the order was placed",
+            "supported": true
+          }
+        ],
+        "judge_scores": {
+          "relevance": 4,
+          "correctness": 4,
+          "tone": 3.5,
+          "completeness": 3.5,
+          "judge_mean_1_5": 3.75,
+          "judge_normalized_0_1": 0.6875
+        },
+        "judge_raw_runs": [
+          {
+            "reasoning": "The candidate reply is clear and concise, but lacks empathy and a clear explanation of the issue. It also doesn't provide a specific timeframe for the refund.",
             "relevance": 4,
-            "correctness": 3,
+            "correctness": 4,
+            "tone": 3,
+            "completeness": 4
+          },
+          {
+            "reasoning": "The candidate reply acknowledges the customer's concern, apologizes for the delay, and initiates a full refund, but lacks specific details about the shipping issue and the refund processing timeframe.",
+            "relevance": 4,
+            "correctness": 4,
             "tone": 4,
             "completeness": 3
           }
         ],
-        "composite_score": 0.7611
+        "composite_score": 0.8107
       }
     },
     {
@@ -777,26 +754,26 @@
       "id": "refund_request_010",
       "category": "refund_request",
       "tone": "urgent",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the delay and the inconvenience you have experienced. I have checked on the status of your order and it appears that there was an issue with the shipping carrier, which caused the delay. I have requested an update from the carrier and I will provide you with a revised estimated delivery date as soon as possible. In the meantime, I have also requested that a replacement order be shipped to you via expedited shipping, at no additional cost to you. You will receive an email with the new tracking information as soon as the replacement order is shipped. Please allow 24-48 hours for the new tracking information to be updated. If you have any further questions or concerns, please do not hesitate to contact us. Your original order total of $249.99 will still be honored and you will not be charged for the replacement order. Thank you for your patience and understanding.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NZ12345. I apologize for the delay and the inconvenience you have experienced. I have checked on the status of your order and it appears that there was an issue with the shipping process, which caused the delay. I have requested an update from the shipping carrier and I will provide you with a revised estimated delivery date as soon as possible. In the meantime, I have also initiated a refund of $249.99 for you, which will be processed within the next 3-5 business days. You will receive an email confirmation once the refund has been issued. If you have any further questions or concerns, please do not hesitate to contact us. Thank you for your patience and understanding.",
       "retrieved_context_ids": [
         "refund_request_009",
         "complaint_019",
         "refund_request_008"
       ],
       "eval": {
-        "bertscore_f1": 0.9094,
-        "faithfulness_score": 0.16666666666666666,
+        "bertscore_f1": 0.9353,
+        "faithfulness_score": 0.75,
         "faithfulness_claims": [
           {
             "claim": "I have checked on the status of your order",
             "supported": false
           },
           {
-            "claim": "there was an issue with the shipping carrier",
+            "claim": "there was an issue with the shipping process",
             "supported": false
           },
           {
-            "claim": "I have requested an update from the carrier",
+            "claim": "I have requested an update from the shipping carrier",
             "supported": false
           },
           {
@@ -804,55 +781,43 @@
             "supported": false
           },
           {
-            "claim": "a replacement order be shipped to you via expedited shipping",
-            "supported": false
-          },
-          {
-            "claim": "at no additional cost to you",
-            "supported": false
-          },
-          {
-            "claim": "You will receive an email with the new tracking information as soon as the replacement order is shipped",
-            "supported": false
-          },
-          {
-            "claim": "Please allow 24-48 hours for the new tracking information to be updated",
-            "supported": false
-          },
-          {
-            "claim": "Your original order total of $249.99 will still be honored",
+            "claim": "I have also initiated a refund of $249.99 for you",
             "supported": true
           },
           {
-            "claim": "you will not be charged for the replacement order",
-            "supported": false
+            "claim": "which will be processed within the next 3-5 business days",
+            "supported": true
+          },
+          {
+            "claim": "You will receive an email confirmation once the refund has been issued",
+            "supported": true
           }
         ],
         "judge_scores": {
           "relevance": 4,
-          "correctness": 2.5,
+          "correctness": 3.5,
           "tone": 4.5,
           "completeness": 3.5,
-          "judge_mean_1_5": 3.62,
-          "judge_normalized_0_1": 0.655
+          "judge_mean_1_5": 3.88,
+          "judge_normalized_0_1": 0.72
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply attempts to address the customer's issue, but it introduces a replacement order and expedited shipping, which is not mentioned in the reference reply. This may confuse the customer and is not necessary to resolve the issue.",
+            "reasoning": "The candidate reply acknowledges the customer's issue, apologizes for the delay, and provides a clear explanation for the shipping issue. However, it doesn't provide a clear timeline for the refund and doesn't mention that the refund will be processed within the next 24-48 hours, which is more specific than 3-5 business days.",
             "relevance": 4,
-            "correctness": 3,
-            "tone": 4,
+            "correctness": 4,
+            "tone": 5,
             "completeness": 4
           },
           {
-            "reasoning": "The candidate reply attempts to address the customer's concern but introduces a new issue (replacement order) without resolving the original problem (delayed delivery). It also implies that the original order total will be honored, which is not explicitly stated in the reference reply.",
+            "reasoning": "The candidate reply attempts to address the customer's concern but lacks specificity and clarity compared to the reference reply. It also provides a less concrete timeline for the refund and does not directly apologize for the 'Tracking information not available' error message.",
             "relevance": 4,
-            "correctness": 2,
-            "tone": 5,
+            "correctness": 3,
+            "tone": 4,
             "completeness": 3
           }
         ],
-        "composite_score": 0.5477
+        "composite_score": 0.7843
       }
     },
     {
@@ -862,58 +827,70 @@
       "id": "refund_request_011",
       "category": "refund_request",
       "tone": "polite",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 Smartwatch, order #NV12345. We apologize for the inconvenience caused by the malfunctioning device. We are happy to assist you with a full refund of $249.99. However, we would like to request that you contact our Support Team directly so we can troubleshoot the issue further and see if a replacement device is a viable option. Please allow 3-5 business days for the refund to be processed. You will receive an email confirmation once the refund has been issued. If you have any further questions or concerns, please do not hesitate to contact us. Thank you for your patience and understanding.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your X500 Smartwatch, order #NV12345. We apologize for the inconvenience caused by the malfunctioning device. We are happy to assist you with a full refund of $249.99. However, before we proceed, could you please provide more information about the device's warranty status and the date you purchased it, as this will help us to process your request more efficiently? Additionally, if you're open to it, we may be able to offer a replacement device instead of a full refund. Please let me know which option you prefer and if you have any further questions or concerns, please do not hesitate to contact us.",
       "retrieved_context_ids": [
         "billing_002",
         "refund_request_009",
         "refund_request_008"
       ],
       "eval": {
-        "bertscore_f1": 0.9121,
-        "faithfulness_score": 0.25,
+        "bertscore_f1": 0.9104,
+        "faithfulness_score": 0.5,
         "faithfulness_claims": [
           {
             "claim": "We are happy to assist you with a full refund of $249.99.",
+            "supported": false
+          },
+          {
+            "claim": "We are happy to assist you with a full refund of $249.99.",
+            "supported": false
+          },
+          {
+            "claim": "We are happy to assist you with a full refund of $249.99.",
+            "supported": false
+          },
+          {
+            "claim": "We are happy to assist you with a full refund of $249.99.",
+            "supported": false
+          },
+          {
+            "claim": "However, before we proceed, could you please provide more information about the device's warranty status and the date you purchased it, as this will help us to process your request more efficiently?",
             "supported": true
           },
           {
-            "claim": "Please allow 3-5 business days for the refund to be processed.",
-            "supported": false
+            "claim": "Additionally, if you're open to it, we may be able to offer a replacement device instead of a full refund.",
+            "supported": true
           },
           {
-            "claim": "You will receive an email confirmation once the refund has been issued.",
-            "supported": false
-          },
-          {
-            "claim": "If you have any further questions or concerns, please do not hesitate to contact us.",
-            "supported": false
+            "claim": "Please let me know which option you prefer and if you have any further questions or concerns, please do not hesitate to contact us.",
+            "supported": true
           }
         ],
         "judge_scores": {
-          "relevance": 4,
+          "relevance": 3,
           "correctness": 3,
           "tone": 4.5,
-          "completeness": 3,
-          "judge_mean_1_5": 3.62,
-          "judge_normalized_0_1": 0.655
+          "completeness": 2.5,
+          "judge_mean_1_5": 3.25,
+          "judge_normalized_0_1": 0.5625
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply acknowledges the customer's issue, offers a refund, but fails to provide a clear process for a replacement device and does not mention the return merchandise authorization (RMA) number. It also adds unnecessary details about the refund processing time.",
-            "relevance": 4,
+            "reasoning": "The candidate reply does not directly address the customer's request for a refund or replacement, instead asking for additional information that is not necessary for processing the request. The tone is polite, but the language is somewhat confusing.",
+            "relevance": 2,
             "correctness": 3,
             "tone": 4,
-            "completeness": 3
+            "completeness": 2
           },
           {
-            "reasoning": "The candidate reply acknowledges the customer's issue, offers a refund, but fails to provide a clear return policy and RMA process. It also introduces a 3-5 business day wait time for the refund, which is not present in the reference reply.",
+            "reasoning": "The candidate reply is relevant to the customer's issue, but it asks for unnecessary information (warranty status and purchase date) and does not clearly state the return policy or provide a clear next step for the customer.",
             "relevance": 4,
             "correctness": 3,
             "tone": 5,
             "completeness": 3
           }
         ],
-        "composite_score": 0.5775
+        "composite_score": 0.6276
       }
     },
     {
@@ -923,62 +900,62 @@
       "id": "sales_inquiry_012",
       "category": "sales_inquiry",
       "tone": "neutral",
-      "generated_reply": "Dear valued customer, thank you for bringing this to our attention. I've reviewed your order #INV12345 and the X500 Premium subscription. The promotional discount of $20 off for first-time customers is a one-time offer that's only applicable to new customers who have not previously purchased our products or services. Since you placed your order on February 10th, it's possible that you may have been eligible for the discount. However, I need to verify your customer status to confirm your eligibility. Could you please confirm whether this is your first purchase from our company?",
+      "generated_reply": "Dear valued customer, thank you for bringing this to our attention. I've reviewed your order #INV12345 and the X500 Premium subscription. The promotional discount of $20 off for first-time customers is a one-time offer that is automatically applied at checkout. However, it seems that the discount was not applied to your order. I've gone ahead and manually applied the discount to your order, which brings the total to $229.99. You should receive an updated order confirmation email with the corrected pricing. If you have any further questions or concerns, please do not hesitate to reach out to us.",
       "retrieved_context_ids": [
         "sales_inquiry_013",
         "sales_inquiry_015",
         "sales_inquiry_014"
       ],
       "eval": {
-        "bertscore_f1": 0.8901,
-        "faithfulness_score": 0.25,
+        "bertscore_f1": 0.9339,
+        "faithfulness_score": 0.5,
         "faithfulness_claims": [
           {
-            "claim": "The promotional discount of $20 off for first-time customers is a one-time offer",
+            "claim": "The promotional discount of $20 off for first-time customers is a one-time offer that is automatically applied at checkout.",
             "supported": false
           },
           {
-            "claim": "The promotional discount of $20 off for first-time customers is only applicable to new customers who have not previously purchased our products or services",
-            "supported": false
-          },
-          {
-            "claim": "You placed your order on February 10th",
+            "claim": "The discount was not applied to your order.",
             "supported": true
           },
           {
-            "claim": "I need to verify your customer status to confirm your eligibility",
-            "supported": false
+            "claim": "I've gone ahead and manually applied the discount to your order, which brings the total to $229.99.",
+            "supported": true
           },
           {
-            "claim": "Could you please confirm whether this is your first purchase from our company?",
+            "claim": "You should receive an updated order confirmation email with the corrected pricing.",
+            "supported": true
+          },
+          {
+            "claim": "If you have any further questions or concerns, please do not hesitate to reach out to us.",
             "supported": false
           }
         ],
         "judge_scores": {
-          "relevance": 2,
-          "correctness": 2.5,
+          "relevance": 4,
+          "correctness": 4,
           "tone": 3.5,
-          "completeness": 2,
-          "judge_mean_1_5": 2.5,
-          "judge_normalized_0_1": 0.375
+          "completeness": 3.5,
+          "judge_mean_1_5": 3.75,
+          "judge_normalized_0_1": 0.6875
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply fails to directly address the customer's concern about the missing discount and instead shifts the focus to the customer's eligibility for the promotion. It also introduces ambiguity by stating that the customer may have been eligible, rather than confirming their eligibility.",
-            "relevance": 2,
-            "correctness": 2,
-            "tone": 3,
-            "completeness": 2
+            "reasoning": "The candidate reply is clear and concise, but it doesn't fully address the customer's concern about not receiving a confirmation email with the discount. It also doesn't provide a specific timeframe for the updated order confirmation email to be received.",
+            "relevance": 4,
+            "correctness": 4,
+            "tone": 4,
+            "completeness": 3
           },
           {
-            "reasoning": "The candidate reply fails to address the customer's concern about the missing discount and instead shifts the focus to the customer's eligibility for the discount, which was not the main issue. It also introduces uncertainty by asking the customer to confirm their status, whereas the reference reply provides a clear answer.",
-            "relevance": 2,
-            "correctness": 3,
-            "tone": 4,
-            "completeness": 2
+            "reasoning": "The candidate reply lacks a clear explanation for the technical issue that prevented the discount from being applied during checkout, and it doesn't explicitly mention that the customer is eligible for the discount. The tone is somewhat abrupt and doesn't acknowledge the customer's concern.",
+            "relevance": 4,
+            "correctness": 4,
+            "tone": 3,
+            "completeness": 4
           }
         ],
-        "composite_score": 0.46
+        "composite_score": 0.6835
       }
     },
     {
@@ -988,74 +965,66 @@
       "id": "sales_inquiry_013",
       "category": "sales_inquiry",
       "tone": "frustrated",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your order #NX001234. I've reviewed your order and the pricing discrepancy you've mentioned. The X500 Pro software package was indeed quoted at $249.99, but the $299.99 charge was due to an additional feature being added to your order. The feature, 'Priority Support,' is a $50 add-on. As for the coupon code 'X500PRO15,' I've checked and it's not applicable to the X500 Pro software package. However, I'd be happy to provide you with a one-time discount of 15% off your order total. I'll manually apply the discount to your order. You should receive an updated invoice reflecting the corrected price of $249.99. Please allow 24-48 hours for the updated invoice to be processed. If you have any further questions or concerns, please do not hesitate to contact us.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your order #NX001234. I have reviewed your order and the pricing discrepancy you mentioned. The X500 Pro software package was indeed priced at $299.99, which is higher than the standard price of $249.99. However, I found that the $299.99 price is due to an additional feature that was included in your custom order, which is not included in the standard package listed on our website. The additional feature, 'Advanced Analytics,' is a $50 add-on. \n\nRegarding the coupon code 'X500PRO15', I apologize for the inconvenience caused by the error message. Unfortunately, this coupon code is not applicable to the X500 Pro software package due to its custom nature. \n\nI would like to assist you in resolving this matter. If you'd like to proceed with the standard package at $249.99, I can update your order and provide a revised order confirmation. Alternatively, if you'd like to keep the additional feature, I can provide you with more information on how to proceed. Please let me know how you'd like to proceed, and I'll be happy to assist you.",
       "retrieved_context_ids": [
         "sales_inquiry_012",
         "sales_inquiry_014",
         "billing_001"
       ],
       "eval": {
-        "bertscore_f1": 0.9297,
-        "faithfulness_score": 0.5,
+        "bertscore_f1": 0.901,
+        "faithfulness_score": 0.375,
         "faithfulness_claims": [
           {
-            "claim": "The X500 Pro software package was indeed quoted at $249.99",
+            "claim": "The X500 Pro software package was indeed priced at $299.99",
+            "supported": false
+          },
+          {
+            "claim": "which is higher than the standard price of $249.99",
             "supported": true
           },
           {
-            "claim": "the $299.99 charge was due to an additional feature being added to your order",
+            "claim": "The additional feature, 'Advanced Analytics,' is a $50 add-on",
             "supported": false
           },
           {
-            "claim": "The feature, 'Priority Support,' is a $50 add-on",
-            "supported": false
-          },
-          {
-            "claim": "I've checked and it's not applicable to the X500 Pro software package",
+            "claim": "this coupon code is not applicable to the X500 Pro software package due to its custom nature",
             "supported": true
           },
           {
-            "claim": "However, I'd be happy to provide you with a one-time discount of 15% off your order total",
-            "supported": false
+            "claim": "If you'd like to proceed with the standard package at $249.99, I can update your order and provide a revised order confirmation",
+            "supported": true
           },
           {
-            "claim": "I'll manually apply the discount to your order",
-            "supported": false
-          },
-          {
-            "claim": "You should receive an updated invoice reflecting the corrected price of $249.99",
-            "supported": false
-          },
-          {
-            "claim": "Please allow 24-48 hours for the updated invoice to be processed",
-            "supported": false
+            "claim": "Alternatively, if you'd like to keep the additional feature, I can provide you with more information on how to proceed",
+            "supported": true
           }
         ],
         "judge_scores": {
-          "relevance": 4,
+          "relevance": 3.5,
           "correctness": 2.5,
           "tone": 4,
-          "completeness": 4,
-          "judge_mean_1_5": 3.62,
-          "judge_normalized_0_1": 0.655
+          "completeness": 3.5,
+          "judge_mean_1_5": 3.38,
+          "judge_normalized_0_1": 0.595
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply attempts to address the customer's concerns but introduces an additional feature that was not mentioned in the original email, which may be seen as a misrepresentation of the facts.",
-            "relevance": 4,
-            "correctness": 3,
+            "reasoning": "The candidate reply attempts to address the customer's concerns but introduces confusion by mentioning an additional feature that is not present in the original order. The reference reply clearly states that the X500 Pro software package is supposed to cost $249.99 and offers a courtesy discount.",
+            "relevance": 3,
+            "correctness": 2,
             "tone": 4,
             "completeness": 4
           },
           {
-            "reasoning": "The candidate reply attempts to address the customer's concerns, but its explanation for the price discrepancy is incorrect and does not match the reference reply's explanation. The candidate reply also offers a different discount than the reference reply.",
+            "reasoning": "The candidate reply addresses the customer's concerns but fails to provide a clear resolution, whereas the reference reply offers a clear adjustment to the order price and a one-time courtesy discount.",
             "relevance": 4,
-            "correctness": 2,
+            "correctness": 3,
             "tone": 4,
-            "completeness": 4
+            "completeness": 3
           }
         ],
-        "composite_score": 0.6694
+        "composite_score": 0.5945
       }
     },
     {
@@ -1065,14 +1034,14 @@
       "id": "sales_inquiry_014",
       "category": "sales_inquiry",
       "tone": "urgent",
-      "generated_reply": "Dear valued customer,\n\nThank you for bringing this to our attention. I have reviewed your quote for the X500 Pro software package under order number #INV2023-0012 and I see that there is a discrepancy in the pricing. The price listed on our website is indeed $2,199.99, but it seems that the quote you received was an error. I have checked with our team and it appears that the correct price for the X500 Pro software package is $2,199.99. I will make sure to correct the quote and you should receive an updated version with the correct pricing. Please allow me a few minutes to process this change and you will receive an updated quote. If you have any further questions or concerns, please do not hesitate to reach out to us.\n\nBest regards, [Your Name]",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding the pricing discrepancy for the X500 Pro software package. I have checked on the status of your quote #INV2023-0012 and confirmed that the price listed on our website is indeed $2,199.99. The quote you received for $2,499.99 appears to be an error. I have gone ahead and adjusted the price for your quote to reflect the correct amount. You should receive an updated quote with the corrected pricing shortly. Please allow 24-48 hours for the updated quote to be processed. If you have any further questions or concerns, please do not hesitate to contact us.",
       "retrieved_context_ids": [
         "sales_inquiry_013",
         "sales_inquiry_012",
         "sales_inquiry_015"
       ],
       "eval": {
-        "bertscore_f1": 0.8989,
+        "bertscore_f1": 0.9014,
         "faithfulness_score": 0.5,
         "faithfulness_claims": [
           {
@@ -1080,55 +1049,51 @@
             "supported": true
           },
           {
-            "claim": "the quote you received was an error",
-            "supported": false
-          },
-          {
-            "claim": "the correct price for the X500 Pro software package is $2,199.99",
+            "claim": "the quote you received for $2,499.99 appears to be an error",
             "supported": true
           },
           {
-            "claim": "I will make sure to correct the quote",
-            "supported": true
-          },
-          {
-            "claim": "you should receive an updated version with the correct pricing",
+            "claim": "I have gone ahead and adjusted the price for your quote to reflect the correct amount",
             "supported": false
           },
           {
-            "claim": "please allow me a few minutes to process this change",
+            "claim": "You should receive an updated quote with the corrected pricing shortly",
             "supported": false
           },
           {
-            "claim": "you will receive an updated quote",
+            "claim": "Please allow 24-48 hours for the updated quote to be processed",
+            "supported": false
+          },
+          {
+            "claim": "If you have any further questions or concerns, please do not hesitate to contact us",
             "supported": false
           }
         ],
         "judge_scores": {
           "relevance": 2.5,
           "correctness": 3.5,
-          "tone": 4,
+          "tone": 3.5,
           "completeness": 2,
-          "judge_mean_1_5": 3.0,
-          "judge_normalized_0_1": 0.5
+          "judge_mean_1_5": 2.88,
+          "judge_normalized_0_1": 0.47
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply fails to address the customer's specific concern about the 'Advanced Analytics' feature, which is a crucial part of the solution. It also doesn't provide a clear option for the customer to proceed with the standard package at the correct price.",
-            "relevance": 2,
-            "correctness": 3,
-            "tone": 4,
-            "completeness": 2
-          },
-          {
-            "reasoning": "The candidate reply fails to address the customer's concern about the additional feature included in the custom quote, which is a key point in the reference reply. It also doesn't provide a clear solution or alternative to the customer, making it less helpful than the reference reply.",
+            "reasoning": "The candidate reply does not address the customer's concern about the additional feature included in the custom quote, which is a key point in the reference reply. It also does not provide an option for the customer to proceed with the standard package at the lower price.",
             "relevance": 3,
             "correctness": 4,
             "tone": 4,
             "completeness": 2
+          },
+          {
+            "reasoning": "The candidate reply does not address the customer's concern about the additional feature included in the custom quote, and instead simply states that the price was an error. This does not provide a clear understanding of the pricing discrepancy or offer a solution that meets the customer's needs.",
+            "relevance": 2,
+            "correctness": 3,
+            "tone": 3,
+            "completeness": 2
           }
         ],
-        "composite_score": 0.5997
+        "composite_score": 0.5883
       }
     },
     {
@@ -1138,139 +1103,58 @@
       "id": "sales_inquiry_015",
       "category": "sales_inquiry",
       "tone": "polite",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your quote for the X500 Pro model, referenced under order number #XS001234. I've reviewed the quote and confirmed that the pricing details for the base model and premium support package are accurate. However, I would like to provide you with the pricing details for the extended warranty. The cost for the extended warranty is $250. As for discounts, I can offer you a 5% discount if you purchase all three together, which would bring the total cost to $3,162.50. Please let me know if you'd like to proceed with purchasing the extended warranty and premium support package, and I'll be happy to assist you with the next steps.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us regarding your quote for the X500 Pro model under order number #XS001234. I've reviewed your quote and can provide you with the pricing details for the extended warranty. The extended warranty for the X500 Pro model is priced at $200. If you're interested in purchasing the extended warranty, premium support package, and base model together, I can provide you with a revised quote. Please let me know if you'd like me to proceed with this and I'll be happy to assist you.",
       "retrieved_context_ids": [
         "sales_inquiry_014",
         "sales_inquiry_012",
         "billing_003"
       ],
       "eval": {
-        "bertscore_f1": 0.9085,
+        "bertscore_f1": 0.8986,
         "faithfulness_score": 0.75,
         "faithfulness_claims": [
           {
-            "claim": "the pricing details for the base model and premium support package are accurate",
+            "claim": "I've reviewed your quote",
             "supported": true
           },
           {
-            "claim": "the cost for the extended warranty is $250",
+            "claim": "The extended warranty for the X500 Pro model is priced at $200",
             "supported": false
           },
           {
-            "claim": "a 5% discount is available if you purchase all three together",
+            "claim": "If you're interested in purchasing the extended warranty, premium support package, and base model together, I can provide you with a revised quote",
             "supported": true
           },
           {
-            "claim": "the total cost with the extended warranty and premium support package is $3,162.50",
+            "claim": "Please let me know if you'd like me to proceed with this",
             "supported": true
           }
         ],
         "judge_scores": {
-          "relevance": 4,
-          "correctness": 2.5,
-          "tone": 4.5,
-          "completeness": 2.5,
-          "judge_mean_1_5": 3.38,
-          "judge_normalized_0_1": 0.595
+          "relevance": 2,
+          "correctness": 1.5,
+          "tone": 4,
+          "completeness": 2,
+          "judge_mean_1_5": 2.38,
+          "judge_normalized_0_1": 0.345
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply fails to provide accurate pricing details for the extended warranty and does not account for the correct total cost when applying the discount. It also lacks clarity on the specific pricing for the 2-year and 3-year extended warranties.",
-            "relevance": 4,
+            "reasoning": "The candidate reply fails to provide the correct pricing details for the extended warranty and does not mention the discount for purchasing all three together. It also lacks clarity on the total cost and does not provide a clear call to action.",
+            "relevance": 2,
+            "correctness": 1,
+            "tone": 4,
+            "completeness": 2
+          },
+          {
+            "reasoning": "The candidate reply fails to provide the correct pricing details for the extended warranty and does not offer a clear discount for purchasing all three together. It also lacks a detailed breakdown of the costs and does not acknowledge the customer's original quote.",
+            "relevance": 2,
             "correctness": 2,
             "tone": 4,
-            "completeness": 3
-          },
-          {
-            "reasoning": "The candidate reply lacks detailed information about the extended warranty options (2-year and 3-year coverage) and does not provide a clear breakdown of the total cost for each bundle option.",
-            "relevance": 4,
-            "correctness": 3,
-            "tone": 5,
             "completeness": 2
           }
         ],
-        "composite_score": 0.7276
-      }
-    },
-    {
-      "subject": "Issue with Order #12345 for SmartBlender 500",
-      "body": "I placed an order for a SmartBlender 500 on February 10th, order number #12345, and was charged $149.99. However, when I tried to use the blender for the first time on February 15th, it displayed an error message 'E03: Motor Overload' and stopped working. I've tried resetting it and following the troubleshooting guide, but the issue persists. I would appreciate it if you could look into this matter and provide a replacement or a refund as soon as possible.",
-      "gold_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartBlender 500, order #12345. I apologize for the inconvenience caused by the 'E03: Motor Overload' error message. I've checked on the status of your order and confirmed that it was shipped on February 12th. I'm going to go ahead and process a replacement for you, which will be shipped out within the next 3-5 business days. You will receive an email with the new tracking information once the replacement has been shipped. If you would prefer a refund instead, please let me know and I'll be happy to assist you with that. Please note that you will not need to return the defective blender, as we will send a prepaid return label with the replacement. If you have any further questions or concerns, please don't hesitate to contact me directly.",
-      "id": "complaint_016",
-      "category": "complaint",
-      "tone": "neutral",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartBlender 500, order number #12345. We apologize for the inconvenience caused by the 'E03: Motor Overload' error message and the blender not working as expected. We'd be happy to help you with a replacement or a refund. As per our return policy, we can offer a replacement SmartBlender 500 or a full refund of $149.99. To proceed, please reply to this email with your preference, and we will provide you with a return merchandise authorization (RMA) number and further instructions. If you have any questions or concerns, please don't hesitate to contact us. Your order #12345 will be updated accordingly, and we appreciate your patience and cooperation in this matter.",
-      "retrieved_context_ids": [
-        "billing_001",
-        "refund_request_011",
-        "complaint_017"
-      ],
-      "eval": {
-        "bertscore_f1": 0.9096,
-        "faithfulness_score": 0.625,
-        "faithfulness_claims": [
-          {
-            "claim": "We apologize for the inconvenience caused by the 'E03: Motor Overload' error message and the blender not working as expected.",
-            "supported": false
-          },
-          {
-            "claim": "We'd be happy to help you with a replacement or a refund.",
-            "supported": true
-          },
-          {
-            "claim": "As per our return policy, we can offer a replacement SmartBlender 500 or a full refund of $149.99.",
-            "supported": true
-          },
-          {
-            "claim": "To proceed, please reply to this email with your preference, and we will provide you with a return merchandise authorization (RMA) number and further instructions.",
-            "supported": true
-          },
-          {
-            "claim": "If you have any questions or concerns, please don't hesitate to contact us.",
-            "supported": false
-          },
-          {
-            "claim": "Your order #12345 will be updated accordingly, and we appreciate your patience and cooperation in this matter.",
-            "supported": true
-          },
-          {
-            "claim": "We can offer a replacement SmartBlender 500 or a full refund of $149.99.",
-            "supported": true
-          },
-          {
-            "claim": "We will provide you with a return merchandise authorization (RMA) number and further instructions.",
-            "supported": true
-          },
-          {
-            "claim": "We appreciate your patience and cooperation in this matter.",
-            "supported": false
-          }
-        ],
-        "judge_scores": {
-          "relevance": 4,
-          "correctness": 3,
-          "tone": 3.5,
-          "completeness": 2.5,
-          "judge_mean_1_5": 3.25,
-          "judge_normalized_0_1": 0.5625
-        },
-        "judge_raw_runs": [
-          {
-            "reasoning": "The candidate reply lacks specific details about the order status and the replacement process, which are present in the reference reply. It also doesn't offer a prepaid return label, which is a key aspect of the reference reply's solution.",
-            "relevance": 4,
-            "correctness": 3,
-            "tone": 4,
-            "completeness": 3
-          },
-          {
-            "reasoning": "The candidate reply acknowledges the issue and offers a solution, but lacks specific details and personalized touch.",
-            "relevance": 4,
-            "correctness": 3,
-            "tone": 3,
-            "completeness": 2
-          }
-        ],
-        "composite_score": 0.6712
+        "composite_score": 0.6251
       }
     },
     {
@@ -1280,7 +1164,7 @@
       "id": "complaint_017",
       "category": "complaint",
       "tone": "frustrated",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartCam 9000, order #12345. I apologize for the inconvenience caused by the delayed delivery and the defective camera. I've checked on the status of your order and confirmed that it was shipped on February 17th, 2023. I'm going to go ahead and process a replacement for you, which will be shipped out within the next 3-5 business days. You will receive an email with the new tracking information once the replacement has been shipped. If you would prefer a refund instead, please let me know and I'll be happy to assist you with that. Please note that you will not need to return the defective camera, as we will send a prepaid return label with the replacement. If you have any further questions or concerns, please don't hesitate to contact me directly.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your SmartCam 9000, order #12345. I apologize for the inconvenience caused by the delayed delivery and the defective camera. I've checked on the status of your order and confirmed that it was shipped on February 15th, 2023. I'm going to go ahead and process a replacement for you, which will be shipped out within the next 3-5 business days. You will receive an email with the new tracking information once the replacement has been shipped. If you would prefer a refund instead, please let me know and I'll be happy to assist you with that. Please note that you will not need to return the defective camera, as we will send a prepaid return label with the replacement. If you have any further questions or concerns, please don't hesitate to contact me directly.",
       "retrieved_context_ids": [
         "billing_001",
         "complaint_016",
@@ -1291,7 +1175,7 @@
         "faithfulness_score": 0.6,
         "faithfulness_claims": [
           {
-            "claim": "the order was shipped on February 17th, 2023",
+            "claim": "the order was shipped on February 15th, 2023",
             "supported": false
           },
           {
@@ -1313,29 +1197,29 @@
         ],
         "judge_scores": {
           "relevance": 4,
-          "correctness": 2.5,
+          "correctness": 3,
           "tone": 4,
           "completeness": 3,
-          "judge_mean_1_5": 3.38,
-          "judge_normalized_0_1": 0.595
+          "judge_mean_1_5": 3.5,
+          "judge_normalized_0_1": 0.625
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply acknowledges the customer's issue, apologizes for the inconvenience, and offers a replacement or refund. However, it lacks specific details about the return process and the timeframe for the replacement. The candidate also incorrectly states that the camera was shipped on February 17th, 2023, whereas the customer mentioned it was supposed to be delivered within 3-5 business days after February 10th, 2023.",
+            "reasoning": "The candidate reply does not provide a clear explanation for the delay in delivery, unlike the reference reply which apologizes for the delay and provides a specific reason. The candidate reply also does not mention the prepaid return shipping label, which is an important detail in the reference reply.",
             "relevance": 4,
-            "correctness": 2,
+            "correctness": 3,
             "tone": 4,
             "completeness": 3
           },
           {
-            "reasoning": "The candidate reply lacks specific details about the return process and the customer's original payment method for refund processing.",
+            "reasoning": "The candidate reply attempts to address the customer's issue but lacks key details and clarity compared to the reference reply.",
             "relevance": 4,
             "correctness": 3,
             "tone": 4,
             "completeness": 3
           }
         ],
-        "composite_score": 0.6783
+        "composite_score": 0.6903
       }
     },
     {
@@ -1345,30 +1229,22 @@
       "id": "complaint_018",
       "category": "complaint",
       "tone": "urgent",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV12345. I apologize for the inconvenience you've experienced with tracking your Xbox Series X Console. I've checked on the status of your order, and it appears that there was an issue with the shipping details not being updated correctly. I've gone ahead and manually updated the tracking information, and you should receive an email with the updated tracking details shortly. Your order was indeed processed on February 10th, and the total amount of $599.99 was charged to your payment method. I will also look into expediting the shipping of your console to ensure it arrives as soon as possible. If you have any further questions or concerns, please don't hesitate to contact us.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about the issue with your order #NV12345. I apologize for the inconvenience you've experienced with tracking your Xbox Series X Console. I've checked on the status of your order and it appears that there was an issue with the shipping details not being updated correctly. I've gone ahead and manually updated the tracking information, and you should receive an email with the updated tracking details shortly. Your order was indeed processed on February 10th, and the total amount of $599.99 was charged to your original payment method. Given the urgency of your situation, I've expedited the shipping process, and I will provide you with an update on the status of your order as soon as possible. If you have any further questions or concerns, please don't hesitate to contact us. We appreciate your patience and cooperation in this matter.",
       "retrieved_context_ids": [
         "technical_support_006",
         "refund_request_009",
         "complaint_019"
       ],
       "eval": {
-        "bertscore_f1": 0.9132,
+        "bertscore_f1": 0.9147,
         "faithfulness_score": 0.5,
         "faithfulness_claims": [
           {
-            "claim": "I've checked on the status of your order",
+            "claim": "I've checked on the status of your order and it appears that there was an issue with the shipping details not being updated correctly.",
             "supported": false
           },
           {
-            "claim": "there was an issue with the shipping details not being updated correctly",
-            "supported": false
-          },
-          {
-            "claim": "I've gone ahead and manually updated the tracking information",
-            "supported": false
-          },
-          {
-            "claim": "you should receive an email with the updated tracking details shortly",
+            "claim": "I've gone ahead and manually updated the tracking information, and you should receive an email with the updated tracking details shortly.",
             "supported": false
           },
           {
@@ -1376,39 +1252,43 @@
             "supported": true
           },
           {
-            "claim": "the total amount of $599.99 was charged to your payment method",
+            "claim": "the total amount of $599.99 was charged to your original payment method",
             "supported": true
           },
           {
-            "claim": "I will also look into expediting the shipping of your console to ensure it arrives as soon as possible",
+            "claim": "I've expedited the shipping process",
+            "supported": false
+          },
+          {
+            "claim": "I will provide you with an update on the status of your order as soon as possible",
             "supported": false
           }
         ],
         "judge_scores": {
-          "relevance": 2.5,
-          "correctness": 2.5,
-          "tone": 3.5,
-          "completeness": 2,
-          "judge_mean_1_5": 2.62,
-          "judge_normalized_0_1": 0.405
+          "relevance": 4,
+          "correctness": 3,
+          "tone": 4,
+          "completeness": 2.5,
+          "judge_mean_1_5": 3.38,
+          "judge_normalized_0_1": 0.595
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply provides a basic apology and explanation for the issue, but lacks a clear resolution and follow-up action. It also doesn't provide a replacement order number or a clear timeline for resolution.",
-            "relevance": 3,
-            "correctness": 2,
+            "reasoning": "The candidate reply addresses the customer's issue but lacks the same level of detail and resolution as the reference reply. It does not escalate the issue to the shipping team, nor does it provide a replacement order or a new tracking number.",
+            "relevance": 4,
+            "correctness": 3,
             "tone": 4,
-            "completeness": 2
+            "completeness": 3
           },
           {
-            "reasoning": "The AI-generated reply does not address the customer's concern about the order not being shipped yet, it only mentions updating the tracking information which is not the main issue. It also does not provide a replacement order or a clear plan for expediting the shipping. The tone is polite but lacks empathy and a sense of urgency.",
-            "relevance": 2,
+            "reasoning": "The candidate reply does not address the customer's concern about the shipping company's error message and the urgency of the situation. It also does not provide a clear resolution or a replacement order number.",
+            "relevance": 4,
             "correctness": 3,
-            "tone": 3,
+            "tone": 4,
             "completeness": 2
           }
         ],
-        "composite_score": 0.5653
+        "composite_score": 0.6417
       }
     },
     {
@@ -1418,63 +1298,65 @@
       "id": "complaint_019",
       "category": "complaint",
       "tone": "polite",
-      "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #ORD12345. I apologize for the delay in receiving your 'EcoPure Water Filter' and the inconvenience caused by the 'Tracking information not available' error message. I've located your order and see that it was indeed supposed to be delivered within 3-5 business days. I'm going to go ahead and investigate this further to determine the cause of the delay. Can you please provide me with your order confirmation email or any other relevant details you may have regarding your order? This will help me to better assist you in resolving this issue.",
+      "generated_reply": "Dear valued customer, thank you for reaching out to us about your concern with order #ORD12345. I apologize for the delay in receiving your 'EcoPure Water Filter' and the inconvenience caused by the 'Tracking information not available' error message. I've checked on the status of your order and it appears that it was indeed supposed to be delivered within 3-5 business days. I'm happy to inform you that I've initiated a search for your order and will provide you with an update on its status as soon as possible. If you have any further questions or concerns, please don't hesitate to contact us.",
       "retrieved_context_ids": [
         "refund_request_010",
         "complaint_018",
         "refund_request_009"
       ],
       "eval": {
-        "bertscore_f1": 0.8822,
+        "bertscore_f1": 0.9102,
         "faithfulness_score": 0.25,
         "faithfulness_claims": [
           {
-            "claim": "I apologize for the delay in receiving your 'EcoPure Water Filter' and the inconvenience caused by the 'Tracking information not available' error message.",
+            "claim": "I've checked on the status of your order",
             "supported": false
           },
           {
-            "claim": "I've located your order",
-            "supported": false
-          },
-          {
-            "claim": "it was indeed supposed to be delivered within 3-5 business days",
+            "claim": "it appears that it was indeed supposed to be delivered within 3-5 business days",
             "supported": true
           },
           {
-            "claim": "I'm going to go ahead and investigate this further to determine the cause of the delay",
+            "claim": "I've initiated a search for your order",
             "supported": false
           },
           {
-            "claim": "Can you please provide me with your order confirmation email or any other relevant details you may have regarding your order?",
+            "claim": "will provide you with an update on its status as soon as possible",
             "supported": false
           }
         ],
         "judge_scores": {
-          "relevance": 4,
-          "correctness": 3,
-          "tone": 4,
-          "completeness": 2,
-          "judge_mean_1_5": 3.25,
-          "judge_normalized_0_1": 0.5625
+          "relevance": 3,
+          "correctness": 2.5,
+          "tone": 3.5,
+          "completeness": 1.5,
+          "judge_mean_1_5": 2.62,
+          "judge_normalized_0_1": 0.405
         },
         "judge_raw_runs": [
           {
-            "reasoning": "The candidate reply acknowledges the customer's concern, apologizes for the delay, and asks for additional information to investigate the issue. However, it does not provide a clear explanation for the delay, nor does it offer a solution or a revised estimated delivery date.",
+            "reasoning": "The candidate reply acknowledges the customer's concern, apologizes for the delay, and promises to look into the issue. However, it lacks a clear resolution, update on the status, and fails to provide a sense of urgency or a clear timeline for resolution.",
             "relevance": 4,
             "correctness": 3,
             "tone": 4,
             "completeness": 2
           },
           {
-            "reasoning": "The candidate reply acknowledges the customer's concern, apologizes for the delay, and asks for additional information to investigate the issue. However, it does not provide a clear resolution or update on the status of the order, unlike the reference reply.",
-            "relevance": 4,
-            "correctness": 3,
-            "tone": 4,
-            "completeness": 2
+            "reasoning": "The candidate reply does not provide a clear resolution to the customer's issue, nor does it acknowledge the customer's concern about the order being lost or misplaced.",
+            "relevance": 2,
+            "correctness": 2,
+            "tone": 3,
+            "completeness": 1
           }
         ],
-        "composite_score": 0.5331
+        "composite_score": 0.4771
       }
+    }
+  ],
+  "failed": [
+    {
+      "id": "complaint_016",
+      "error": "complete_json: failed to parse valid JSON after 3 attempts. Last error: Expecting ',' delimiter: line 49 column 109 (char 4330)\nLast raw output: {\n  \"claims\": [\n    {\"claim\": \"We apologize for the inconvenience caused by the 'E03: Motor Overload' error message.\", \"supported\": true},\n    {\"claim\": \"We'd be happy to help you with a replacement or a refund.\", \"supported\": true},\n    {\"claim\": \"As per our return policy, we can offer a replacement device or a full refund of $149.99.\", \"supported\": true},\n    {\"claim\": \"To proceed, please reply to this email with your preference, and we will provide you with a return merchandise authorization (RMA) number and further instructions.\", \"supported\": true},\n    {\"claim\": \"If you have any questions or concerns, please don't hesitate to contact us.\", \"supported\": true},\n    {\"claim\": \"Your order #12345 will be updated accordingly.\", \"supported\": true},\n    {\"claim\": \"we can offer a replacement device or a full refund of $149.99\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number and further instructions\", \"supported\": true},\n    {\"claim\": \"we appreciate your patience and cooperation in this matter\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we can offer a replacement device\", \"supported\": true},\n    {\"claim\": \"we can offer a full refund of $149.99\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we appreciate your patience\", \"supported\": true},\n    {\"claim\": \"we appreciate your cooperation\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we can offer a replacement device or a full refund\", \"supported\": true},\n    {\"claim\": \"we can offer a replacement device\", \"supported\": true},\n    {\"claim\": \"we can offer a full refund\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number and further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},\n    {\"claim\": \"we will provide you with further instructions\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345\", \"supported\": true},\n    {\"claim\": \"we will update your order #12345 accordingly\", \"supported\": true},\n    {\"claim\": \"we will provide you with a return merchandise authorization (RMA) number\", \"supported\": true},"
     }
   ]
 }
